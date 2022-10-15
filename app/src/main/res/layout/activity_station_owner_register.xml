@@ -5,11 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent">
-
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".VehicleOwnerProfile">
+    tools:context=".StationOwnerRegister">
 
     <TextView
         android:id="@+id/textView3"
@@ -59,7 +58,7 @@
         android:inputType="textPersonName"
         android:text="Name"
         app:layout_constraintEnd_toEndOf="@+id/textView4"
-        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="@+id/textView4"
         tools:layout_editor_absoluteY="197dp" />
 
@@ -70,9 +69,9 @@
         android:ems="10"
         android:inputType="phone"
         app:layout_constraintEnd_toEndOf="@+id/textView6"
-        app:layout_constraintHorizontal_bias="0.387"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="@+id/textView6"
-        tools:layout_editor_absoluteY="297dp" />
+        tools:layout_editor_absoluteY="302dp" />
 
     <EditText
         android:id="@+id/editTextPhone3"
@@ -81,9 +80,9 @@
         android:ems="10"
         android:inputType="phone"
         app:layout_constraintEnd_toEndOf="@+id/textView6"
-        app:layout_constraintHorizontal_bias="0.387"
+        app:layout_constraintHorizontal_bias="0.431"
         app:layout_constraintStart_toStartOf="@+id/textView6"
-        tools:layout_editor_absoluteY="394dp" />
+        tools:layout_editor_absoluteY="384dp" />
 
     <EditText
         android:id="@+id/editTextTextPassword2"
@@ -92,9 +91,9 @@
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="@+id/textView5"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="@+id/textView5"
-        tools:layout_editor_absoluteY="569dp" />
+        tools:layout_editor_absoluteY="547dp" />
 
     <TextView
         android:id="@+id/textView5"
@@ -102,20 +101,20 @@
         android:layout_height="wrap_content"
         android:text="Password"
         app:layout_constraintEnd_toEndOf="@+id/editTextPhone"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="@+id/editTextPhone"
-        tools:layout_editor_absoluteY="547dp" />
+        tools:layout_editor_absoluteY="523dp" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginBottom="16dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="8dp"
         android:text="Register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
@@ -123,40 +122,44 @@
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Vehicle Number"
+        android:text="Fuel Station REG Number"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.465"
-        tools:layout_editor_absoluteX="166dp" />
+        app:layout_constraintVertical_bias="0.544" />
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Vehicle type"
-        tools:layout_editor_absoluteX="171dp"
-        tools:layout_editor_absoluteY="460dp" />
+        android:text="Location"
+        tools:layout_editor_absoluteX="180dp"
+        tools:layout_editor_absoluteY="436dp" />
 
     <TextView
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="Profile"
+        android:layout_marginTop="28dp"
+        android:text="Register"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/editTextTextPersonName6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        tools:layout_editor_absoluteX="116dp"
-        tools:layout_editor_absoluteY="487dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

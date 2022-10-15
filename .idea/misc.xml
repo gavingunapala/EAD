@@ -3,13 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/EAD/app/src/main/res/layout/activity_add_station_worker.xml" value="0.2359375" />
+        <entry key="..\:/EAD/app/src/main/res/layout/activity_fuel_arrival_time.xml" value="0.2418478260869565" />
+        <entry key="..\:/EAD/app/src/main/res/layout/activity_fuel_status.xml" value="0.2359375" />
         <entry key="..\:/EAD/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/EAD/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/EAD/app/src/main/res/layout/activity_register.xml" value="0.1" />
+        <entry key="..\:/EAD/app/src/main/res/layout/activity_station_owner_home.xml" value="0.2418478260869565" />
+        <entry key="..\:/EAD/app/src/main/res/layout/activity_station_owner_profile.xml" value="0.2359375" />
+        <entry key="..\:/EAD/app/src/main/res/layout/activity_station_owner_register.xml" value="0.2418478260869565" />
         <entry key="..\:/EAD/app/src/main/res/layout/activity_station_users_register.xml" value="0.25" />
         <entry key="..\:/EAD/app/src/main/res/layout/activity_user_profile.xml" value="0.25" />
-        <entry key="..\:/EAD/app/src/main/res/layout/activity_vehicle_owner_profile.xml" value="0.25" />
+        <entry key="..\:/EAD/app/src/main/res/layout/activity_vehicle_owner_profile.xml" value="0.4" />
         <entry key="..\:/EAD/app/src/main/res/layout/activity_vehicle_owner_register.xml" value="0.26157407407407407" />
+        <entry key="..\:/EAD/app/src/main/res/layout/activity_vehicle_owner_view_station.xml" value="0.2359375" />
+        <entry key="..\:/EAD/app/src/main/res/layout/activity_view_members.xml" value="0.2359375" />
       </map>
     </option>
   </component>

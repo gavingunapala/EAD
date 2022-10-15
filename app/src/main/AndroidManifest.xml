@@ -10,7 +10,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EAD">
         <activity
-            android:name=".StationUsersRegister"
+            android:name=".FuelArrivalTime"
+            android:exported="true" />
+        <activity
+            android:name=".FuelStatus"
+            android:exported="true" />
+        <activity
+            android:name=".ViewMembers"
+            android:exported="true" />
+        <activity
+            android:name=".AddStationWorker"
+            android:exported="true" />
+        <activity
+            android:name=".StationOwnerHome"
+            android:exported="true" />
+        <activity
+            android:name=".StationOwnerProfile"
+            android:exported="true" />
+        <activity
+            android:name=".StationOwnerRegister"
             android:exported="true" />
         <activity
             android:name=".VehicleOwnerRegister"

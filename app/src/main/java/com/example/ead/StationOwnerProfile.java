@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class StationUsersRegister extends AppCompatActivity {
+public class StationOwnerProfile extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_station_users_register);
+        setContentView(R.layout.activity_station_owner_profile);
     }
 }
