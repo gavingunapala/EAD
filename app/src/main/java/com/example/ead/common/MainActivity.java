@@ -1,8 +1,10 @@
-package com.example.ead;
+package com.example.ead.common;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.ead.R;
 
 public class MainActivity extends AppCompatActivity {
 
