@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.ead.FuelArrivalTime;
 import com.example.ead.R;
 
 public class SplashScreen extends AppCompatActivity {
@@ -26,7 +27,7 @@ public class SplashScreen extends AppCompatActivity {
                     e.printStackTrace();
                 }finally {
                     Intent intent = new Intent(SplashScreen.this, MainActivity.class);
-                    //  startActivity(intent);
+                    startActivity(intent);
                     finish();
                 }
             }
