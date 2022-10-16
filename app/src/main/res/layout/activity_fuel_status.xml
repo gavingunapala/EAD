@@ -7,27 +7,54 @@
     tools:context=".FuelStatus">
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/textViewFuelStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
         android:text="Fuel Status"
-        tools:layout_editor_absoluteX="143dp"
-        tools:layout_editor_absoluteY="48dp" />
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.439"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <Switch
         android:id="@+id/switch1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="182dp"
+        android:layout_height="48dp"
         android:text="PETROL"
-        tools:layout_editor_absoluteX="135dp"
-        tools:layout_editor_absoluteY="212dp" />
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="99dp"
+        tools:layout_editor_absoluteY="210dp" />
 
     <Switch
         android:id="@+id/switch2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="183dp"
+        android:layout_height="48dp"
         android:text="DEESEL"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="135dp" />
+        app:layout_constraintVertical_bias="0.499"
+        tools:layout_editor_absoluteX="99dp" />
+
+    <Button
+        android:id="@+id/buttonSubmitStatus"
+        android:layout_width="242dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="128dp"
+        android:text="Submit Status"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
