@@ -10,43 +10,45 @@
         android:id="@+id/buttonAddMem"
         android:layout_width="300dp"
         android:layout_height="53dp"
+        android:layout_marginTop="172dp"
         android:text="Add Members"
-        app:layout_constraintBottom_toTopOf="@+id/buttonViewMem"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.728" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonViewMem"
         android:layout_width="300dp"
         android:layout_height="53dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginTop="36dp"
         android:text="View Members"
-        app:layout_constraintBottom_toTopOf="@+id/buttonFuelStatus"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAddMem" />
 
     <Button
         android:id="@+id/buttonFuelStatus"
         android:layout_width="300dp"
         android:layout_height="53dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginTop="44dp"
         android:text="Fuel status"
-        app:layout_constraintBottom_toTopOf="@+id/buttonFuelTime"
-        tools:layout_editor_absoluteX="55dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonViewMem" />
 
     <Button
         android:id="@+id/buttonFuelTime"
         android:layout_width="300dp"
         android:layout_height="53dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="132dp"
+        android:layout_marginTop="36dp"
         android:text="Fuel Time Details"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonFuelStatus" />
 
     <TextView
         android:id="@+id/textViewWel"
@@ -60,4 +62,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Owner_Profile_button"
+        android:layout_width="299dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="36dp"
+        android:text="Profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonFuelTime" />
 </androidx.constraintlayout.widget.ConstraintLayout>
