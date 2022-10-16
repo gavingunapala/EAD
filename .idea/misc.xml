@@ -3,25 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/4th year 1st Semester/EAD Project Assignment/app/src/main/res/drawable/home_icon.xml" value="0.1305" />
-        <entry key="..\:/4th year 1st Semester/EAD Project Assignment/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1495" />
-        <entry key="..\:/4th year 1st Semester/EAD Project Assignment/app/src/main/res/drawable/login_icon.xml" value="0.1305" />
-        <entry key="..\:/4th year 1st Semester/EAD Project Assignment/app/src/main/res/layout/activity_add_station_worker.xml" value="0.2" />
-        <entry key="..\:/4th year 1st Semester/EAD Project Assignment/app/src/main/res/layout/activity_fuel_arrival_time.xml" value="0.264" />
-        <entry key="..\:/4th year 1st Semester/EAD Project Assignment/app/src/main/res/layout/activity_fuel_status.xml" value="0.25" />
-        <entry key="..\:/4th year 1st Semester/EAD Project Assignment/app/src/main/res/layout/activity_login.xml" value="0.25" />
-        <entry key="..\:/4th year 1st Semester/EAD Project Assignment/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
-        <entry key="..\:/4th year 1st Semester/EAD Project Assignment/app/src/main/res/layout/activity_splash_screen.xml" value="0.22826086956521738" />
-        <entry key="..\:/4th year 1st Semester/EAD Project Assignment/app/src/main/res/layout/activity_station_owner_home.xml" value="0.25" />
-        <entry key="..\:/4th year 1st Semester/EAD Project Assignment/app/src/main/res/layout/activity_station_owner_profile.xml" value="0.25" />
-        <entry key="..\:/4th year 1st Semester/EAD Project Assignment/app/src/main/res/layout/activity_station_owner_register.xml" value="0.25" />
-        <entry key="..\:/4th year 1st Semester/EAD Project Assignment/app/src/main/res/layout/activity_vehicle_owner_profile.xml" value="0.25" />
-        <entry key="..\:/4th year 1st Semester/EAD Project Assignment/app/src/main/res/layout/activity_vehicle_owner_register.xml" value="0.25" />
-        <entry key="..\:/4th year 1st Semester/EAD Project Assignment/app/src/main/res/layout/activity_vehicle_owner_view_station.xml" value="0.25" />
-        <entry key="..\:/4th year 1st Semester/EAD Project Assignment/app/src/main/res/layout/activity_view_members.xml" value="0.25" />
-        <entry key="..\:/4th year 1st Semester/EAD Project Assignment/app/src/main/res/layout/fragment_home.xml" value="0.22826086956521738" />
-        <entry key="..\:/4th year 1st Semester/EAD Project Assignment/app/src/main/res/layout/header.xml" value="0.22826086956521738" />
-        <entry key="..\:/4th year 1st Semester/EAD Project Assignment/app/src/main/res/menu/main_menu.xml" value="0.25" />
         <entry key="..\:/EAD/app/src/main/res/layout/activity_add_station_worker.xml" value="0.2359375" />
         <entry key="..\:/EAD/app/src/main/res/layout/activity_fuel_arrival_time.xml" value="0.2418478260869565" />
         <entry key="..\:/EAD/app/src/main/res/layout/activity_fuel_status.xml" value="0.2359375" />
@@ -30,17 +11,17 @@
         <entry key="..\:/EAD/app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="..\:/EAD/app/src/main/res/layout/activity_station_owner_home.xml" value="0.2418478260869565" />
         <entry key="..\:/EAD/app/src/main/res/layout/activity_station_owner_profile.xml" value="0.2359375" />
-        <entry key="..\:/EAD/app/src/main/res/layout/activity_station_owner_register.xml" value="0.2418478260869565" />
+        <entry key="..\:/EAD/app/src/main/res/layout/activity_station_owner_register.xml" value="0.4" />
         <entry key="..\:/EAD/app/src/main/res/layout/activity_station_users_register.xml" value="0.25" />
         <entry key="..\:/EAD/app/src/main/res/layout/activity_user_profile.xml" value="0.25" />
-        <entry key="..\:/EAD/app/src/main/res/layout/activity_vehicle_owner_profile.xml" value="0.2" />
-        <entry key="..\:/EAD/app/src/main/res/layout/activity_vehicle_owner_register.xml" value="0.26157407407407407" />
+        <entry key="..\:/EAD/app/src/main/res/layout/activity_vehicle_owner_profile.xml" value="0.3215003348961822" />
+        <entry key="..\:/EAD/app/src/main/res/layout/activity_vehicle_owner_register.xml" value="0.4088586030664395" />
         <entry key="..\:/EAD/app/src/main/res/layout/activity_vehicle_owner_view_station.xml" value="0.2359375" />
         <entry key="..\:/EAD/app/src/main/res/layout/activity_view_members.xml" value="0.2359375" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
