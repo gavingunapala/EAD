@@ -58,7 +58,7 @@
         tools:layout_editor_absoluteX="18dp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/editTextTextOwnerUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
@@ -68,7 +68,7 @@
         app:layout_constraintStart_toEndOf="@+id/textView3" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/editTextTextOwnerNIC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -78,7 +78,7 @@
         app:layout_constraintStart_toEndOf="@+id/textView4" />
 
     <EditText
-        android:id="@+id/editTextPhone"
+        android:id="@+id/editTextOwnerPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -88,7 +88,7 @@
         app:layout_constraintStart_toEndOf="@+id/textView6" />
 
     <EditText
-        android:id="@+id/editTextPhone3"
+        android:id="@+id/editTextStationREGNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -119,7 +119,7 @@
         tools:layout_editor_absoluteX="32dp" />
 
     <Button
-        android:id="@+id/buttonSubmitStatus"
+        android:id="@+id/buttonUpdate"
         android:layout_width="196dp"
         android:layout_height="50dp"
         android:layout_marginTop="60dp"
@@ -157,7 +157,7 @@
         tools:layout_editor_absoluteX="38dp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName6"
+        android:id="@+id/editTextTextLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"

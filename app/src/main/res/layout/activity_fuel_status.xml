@@ -45,7 +45,7 @@
         tools:layout_editor_absoluteX="99dp" />
 
     <Button
-        android:id="@+id/buttonSubmitStatus"
+        android:id="@+id/buttonUpdate"
         android:layout_width="242dp"
         android:layout_height="50dp"
         android:layout_marginTop="60dp"
