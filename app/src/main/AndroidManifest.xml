@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ead">
+    package="com.example.ead" >
 
     <application
         android:allowBackup="true"
@@ -8,16 +8,21 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.EAD">
+        android:theme="@style/Theme.EAD" >
         <activity
-            android:name=".testActivity"
-            android:exported="false" />
+            android:name=".UserSelection"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".common.SplashScreen"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".FuelArrivalTime"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".FuelStatus"
             android:exported="true" />
@@ -32,14 +37,13 @@
             android:exported="true" />
         <activity
             android:name=".StationOwnerProfile"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".StationOwnerRegister"
             android:exported="true" />
         <activity
             android:name=".VehicleOwnerRegister"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".VehicleOwnerProfile"
             android:exported="true" />
@@ -48,11 +52,7 @@
             android:exported="true" />
         <activity
             android:name=".common.MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="true" >
         </activity>
     </application>
 
