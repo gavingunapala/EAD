@@ -28,7 +28,7 @@ public class UserSelection extends AppCompatActivity implements AdapterView.OnIt
 
         //User Selection
         // spinner element
-        usersSpinner = (Spinner) findViewById(R.id.userSpinner);
+        usersSpinner = (Spinner) findViewById(R.id.usersSpinner);
         // Spinner click listener
         usersSpinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
         // Spinner Drop down elements

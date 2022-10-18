@@ -21,11 +21,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/usersSpinner"
         app:layout_constraintVertical_bias="1.0" />
 
     <Spinner
-        android:id="@+id/userSpinner"
+        android:id="@+id/usersSpinner"
         android:layout_width="0dp"
         android:layout_height="53dp"
         android:layout_gravity="center"
@@ -63,7 +63,7 @@
         android:layout_height="46dp"
         android:text="Select User Type"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/userSpinner"
+        app:layout_constraintBottom_toTopOf="@+id/usersSpinner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.652"
         app:layout_constraintStart_toStartOf="parent"
