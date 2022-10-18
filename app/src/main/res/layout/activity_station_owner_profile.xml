@@ -33,7 +33,7 @@
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintTop_toBottomOf="@+id/textViewLoginTopic2"
-        tools:layout_editor_absoluteX="22dp" />
+        tools:layout_editor_absoluteX="16dp" />
 
     <TextView
         android:id="@+id/textView4"
@@ -55,13 +55,13 @@
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        tools:layout_editor_absoluteX="18dp" />
+        tools:layout_editor_absoluteX="16dp" />
 
     <EditText
         android:id="@+id/editTextTextOwnerUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="68dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView3"
@@ -71,7 +71,7 @@
         android:id="@+id/editTextTextOwnerNIC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="60dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
@@ -81,7 +81,7 @@
         android:id="@+id/editTextOwnerPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="32dp"
         android:ems="10"
         android:inputType="phone"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView6"
@@ -91,7 +91,7 @@
         android:id="@+id/editTextStationREGNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="32dp"
         android:ems="10"
         android:inputType="phone"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView12"
@@ -101,7 +101,7 @@
         android:id="@+id/editTextTextPassword2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
+        android:layout_marginStart="80dp"
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView5"
@@ -116,7 +116,7 @@
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintTop_toBottomOf="@+id/textView14"
-        tools:layout_editor_absoluteX="32dp" />
+        tools:layout_editor_absoluteX="16dp" />
 
     <Button
         android:id="@+id/buttonUpdate"
@@ -137,13 +137,12 @@
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="60dp"
         android:text="Station Reg No"
         android:textColor="#000000"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        tools:layout_editor_absoluteX="16dp" />
 
     <TextView
         android:id="@+id/textView14"
@@ -154,7 +153,7 @@
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintTop_toBottomOf="@+id/textView12"
-        tools:layout_editor_absoluteX="38dp" />
+        tools:layout_editor_absoluteX="18dp" />
 
     <EditText
         android:id="@+id/editTextTextLocation"
@@ -164,7 +163,7 @@
         android:inputType="textPersonName"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView14"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.611"
+        app:layout_constraintHorizontal_bias="0.809"
         app:layout_constraintStart_toEndOf="@+id/textView14" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
