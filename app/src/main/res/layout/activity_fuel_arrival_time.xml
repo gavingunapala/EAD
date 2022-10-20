@@ -8,89 +8,104 @@
     tools:context=".FuelArrivalTime">
 
   <TextView
-      android:id="@+id/textView19"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="44dp"
-      android:text="Fuel Times"
-      android:textColor="#000000"
-      android:textColorHint="#000000"
+      android:id="@+id/textViewWel"
+      android:layout_width="281dp"
+      android:layout_height="46dp"
+      android:layout_marginTop="24dp"
+      android:text="Station Worker Register"
+      android:textAlignment="center"
+      android:textColor="#4592AF"
       android:textSize="24sp"
       android:textStyle="bold"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.439"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      tools:ignore="MissingConstraints" />
+      app:layout_constraintTop_toTopOf="parent" />
+
 
   <TextView
       android:id="@+id/textView22"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginTop="104dp"
+      android:layout_marginTop="76dp"
       android:drawableLeft="@drawable/ic_time"
       android:text="Fuel Arrival Time"
-      android:textColor="#000000"
-      android:textSize="20sp"
+      android:textColor="#4592af"
+      android:textSize="25sp"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.477"
+      app:layout_constraintHorizontal_bias="0.497"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/textView19" />
+      app:layout_constraintTop_toBottomOf="@+id/textViewWel" />
 
   <TextView
       android:id="@+id/textViewArriaval"
-      android:layout_width="300dp"
-      android:layout_height="45dp"
-      android:layout_marginTop="144dp"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="32dp"
+      android:layout_marginTop="32dp"
+      android:layout_marginEnd="32dp"
+      android:background="@drawable/round_border"
+      android:drawablePadding="16dp"
+      android:ems="10"
       android:gravity="center"
       android:hint="Select Arrival Time"
+      android:padding="16dp"
       android:textColor="#000000"
-      android:textSize="28sp"
+      android:textSize="25sp"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.496"
+      app:layout_constraintHorizontal_bias="0.0"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/textView19" />
+      app:layout_constraintTop_toBottomOf="@+id/textView22"
+      tools:ignore="MissingConstraints" />
 
   <TextView
       android:id="@+id/textView21"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginStart="112dp"
+      android:layout_marginTop="44dp"
       android:drawableLeft="@drawable/ic_time"
       android:text="Fuel Finished Time"
-      android:textColor="#000000"
-      android:textSize="20sp"
-      app:layout_constraintBottom_toTopOf="@+id/textViewFinished"
+      android:textColor="#4592af"
+      android:textSize="25sp"
+      app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/textView22"
-      app:layout_constraintVertical_bias="0.915" />
+      app:layout_constraintTop_toBottomOf="@+id/textViewArriaval" />
 
   <TextView
       android:id="@+id/textViewFinished"
-      android:layout_width="300dp"
-      android:layout_height="45dp"
-      android:layout_marginTop="288dp"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="32dp"
+      android:layout_marginTop="32dp"
+      android:layout_marginEnd="32dp"
+      android:background="@drawable/round_border"
+      android:drawablePadding="16dp"
+      android:ems="10"
       android:gravity="center"
       android:hint="Select Finished Time"
+      android:padding="16dp"
       android:textColor="#000000"
-      android:textSize="28sp"
+      android:textSize="25sp"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.492"
+      app:layout_constraintHorizontal_bias="1.0"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/textView19" />
+      app:layout_constraintTop_toBottomOf="@+id/textView21"
+      tools:ignore="MissingConstraints" />
 
   <Button
-      android:id="@+id/buttonUpdateTime"
-      android:layout_width="300dp"
+      android:id="@+id/btnSignup"
+      android:layout_width="0dp"
       android:layout_height="wrap_content"
-      android:layout_marginBottom="64dp"
+      android:layout_marginStart="32dp"
+      android:layout_marginEnd="32dp"
+      android:layout_marginBottom="40dp"
+      android:background="@drawable/round_border"
       android:text="Update Time"
+      android:textSize="20sp"
+      android:textStyle="bold"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.495"
+      app:layout_constraintHorizontal_bias="0.0"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/textViewFinished"
-      app:layout_constraintVertical_bias="0.496"
-      tools:ignore="NotSibling" />
+      app:layout_constraintTop_toBottomOf="@+id/textViewFinished" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

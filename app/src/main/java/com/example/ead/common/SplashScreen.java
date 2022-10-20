@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import com.example.ead.FuelArrivalTime;
 import com.example.ead.R;
+import com.example.ead.UserSelection;
 
 public class SplashScreen extends AppCompatActivity {
     Thread timer;
@@ -26,7 +27,7 @@ public class SplashScreen extends AppCompatActivity {
                 }catch (InterruptedException e){
                     e.printStackTrace();
                 }finally {
-                    Intent intent = new Intent(SplashScreen.this, MainActivity.class);
+                    Intent intent = new Intent(SplashScreen.this, UserSelection.class);
                     startActivity(intent);
                     finish();
                 }
