@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -11,6 +12,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +38,7 @@ public class VehicleOwnerProfile extends AppCompatActivity implements AdapterVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vehicle_owner_profile);
 
-        buttonUpdateProfile = (Button) findViewById(R.id.buttonUpdate);
+        buttonUpdateProfile = (Button) findViewById(R.id.buttonReg);
 
         //Edit Texts
         name=findViewById( R.id.userName);
@@ -46,6 +56,32 @@ public class VehicleOwnerProfile extends AppCompatActivity implements AdapterVie
         // Spinner click listener
         vehicleSpinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
         fuelSpinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
+
+
+        //url
+        String userid = "cce50903e943fb5273acc05a";
+        String ENDPOINTURL = "http://192.168.43.90:8088/api/FuelPass/GetVehicleOwnerById/"+userid;
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        JsonObjectRequest objectRequest = new JsonObjectRequest(
+                Request.Method.GET,
+                ENDPOINTURL,
+                null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.e("Rest Response", response.toString());
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e("Rest Response", error.toString());
+                    }
+                }
+        );
+        requestQueue.add(objectRequest);
+        /////////////
 
         // Spinner Drop down elements - vehicle type
         List<String> vehicle = new ArrayList<String>();
