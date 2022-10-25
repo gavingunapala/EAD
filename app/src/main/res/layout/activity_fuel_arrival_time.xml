@@ -12,7 +12,7 @@
       android:layout_width="281dp"
       android:layout_height="46dp"
       android:layout_marginTop="24dp"
-      android:text="Station Worker Register"
+      android:text="Fuel Times"
       android:textAlignment="center"
       android:textColor="#4592AF"
       android:textSize="24sp"
