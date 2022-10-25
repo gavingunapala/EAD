@@ -18,13 +18,13 @@ public class AddStationWorker extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_station_worker);
 
-        buttonRegWorker = (Button) findViewById(R.id.buttonRegWorker);
+        buttonRegWorker = (Button) findViewById(R.id.buttonUpdate);
         //editTexts
-        editTextTextWorkerId=findViewById( R.id.editTextTextWorkerId);
-        editTextTextWorkerName=findViewById( R.id.editTextTextWorkerName);
-        editTextNICNumber=findViewById( R.id.editTextNICNumber);
-        editTextPhoneNumber=findViewById( R.id.editTextPhoneNumber);
-        editTextTextWorkerPassword=findViewById( R.id.editTextTextWorkerPassword);
+        editTextTextWorkerId=findViewById( R.id.editTextStationREGNo);
+        editTextTextWorkerName=findViewById( R.id.editTextTextOwnerUsername);
+        editTextNICNumber=findViewById( R.id.editTextTextOwnerNIC);
+        editTextPhoneNumber=findViewById( R.id.editTextOwnerPhone);
+        editTextTextWorkerPassword=findViewById( R.id.editTextTextPassword2);
 
         buttonRegWorker.setOnClickListener(new View.OnClickListener() {
 
