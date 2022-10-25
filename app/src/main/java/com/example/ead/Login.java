@@ -2,6 +2,7 @@ package com.example.ead;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -35,6 +36,7 @@ public class Login extends AppCompatActivity implements AdapterView.OnItemSelect
     Spinner usersSpinner;
     public static String userType;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -30,7 +30,7 @@ public class VehicleOwnerProfile extends AppCompatActivity implements AdapterVie
     private Button buttonUpdateProfile;
     EditText name , NIC , mobileNumber , vehicleNumber , VehicleType , password , FuelType;
     //spinner - vehicle type & fuel type
-    Spinner vehicleSpinner, fuelSpinner;
+    Spinner vehicleSpinner, fuelSpinner, userSpinner;
     public static String vehicleType, fuelType;
 
     @Override
@@ -42,7 +42,6 @@ public class VehicleOwnerProfile extends AppCompatActivity implements AdapterVie
 
         //Edit Texts
         name=findViewById( R.id.userName);
-        NIC=findViewById( R.id.editTextTextOwnerNIC);
         mobileNumber=findViewById( R.id.editTextOwnerPhone);
         vehicleNumber=findViewById( R.id.vehicleNumber);
 //        VehicleType=findViewById( R.id.editTextVehicleNumber);
@@ -51,12 +50,14 @@ public class VehicleOwnerProfile extends AppCompatActivity implements AdapterVie
 
         //vehicle type & fuel type Selection
         // spinner element
-        vehicleSpinner = (Spinner) findViewById(R.id.usersSpinner);
+        vehicleSpinner = (Spinner) findViewById(R.id.vehicleSpinner);
         fuelSpinner = (Spinner) findViewById(R.id.fuelType);
+        userSpinner = (Spinner) findViewById(R.id.userSpinner);
+
         // Spinner click listener
         vehicleSpinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
         fuelSpinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
-
+        userSpinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
 
         //url
         String userid = "cce50903e943fb5273acc05a";
@@ -85,6 +86,12 @@ public class VehicleOwnerProfile extends AppCompatActivity implements AdapterVie
         //set all textviews to default values
         name.setText((CharSequence)"nam");
 
+        // Spinner Drop down elements - User types
+        List<String> users = new ArrayList<String>();
+        users.add("Vehicle Owner");
+        users.add("Station Owner");
+        users.add("Station Worker");
+
         // Spinner Drop down elements - vehicle type
         List<String> vehicle = new ArrayList<String>();
         vehicle.add("Car/Van/Jeep");
@@ -95,6 +102,13 @@ public class VehicleOwnerProfile extends AppCompatActivity implements AdapterVie
         List<String> fuel = new ArrayList<String>();
         fuel.add("Petrol");
         fuel.add("Diesel");
+
+        // Creating adapter for spinner
+        ArrayAdapter<String> dataAdapterTypeForUsers = new ArrayAdapter<String>(getApplicationContext(), R.layout.spinner_item, fuel);
+        // Drop down layout style - list view with radio button
+        dataAdapterTypeForUsers.setDropDownViewResource(R.layout.spinner_dropdown_item);
+        // attaching data adapter to spinner
+        userSpinner.setAdapter(dataAdapterTypeForUsers);
 
         // Creating adapter for spinner
         ArrayAdapter<String> dataAdapterTypeForVehicle = new ArrayAdapter<String>(getApplicationContext(), R.layout.spinner_item, vehicle);

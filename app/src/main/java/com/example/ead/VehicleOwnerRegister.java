@@ -31,8 +31,8 @@ public class VehicleOwnerRegister extends AppCompatActivity implements AdapterVi
 
     private Button buttonRegister;
     EditText name , NIC , mobileNumber , vehicleNumber , VehicleType , password , FuelType;
-    //spinner - vehicle type & fuel type
-    Spinner vSpinner, fuelTypeSpinner;
+    //spinner - vehicle type & fuel type, user selection
+    Spinner vSpinner, fuelTypeSpinner, userSpinner;
     public static String vehicleType, fuelType;
 
     @SuppressLint("MissingInflatedId")
@@ -54,11 +54,20 @@ public class VehicleOwnerRegister extends AppCompatActivity implements AdapterVi
 
         //vehicle type & fuel type Selection
         // spinner element
-        vSpinner = (Spinner) findViewById(R.id.usersSpinner);
+        vSpinner = (Spinner) findViewById(R.id.vehicleSpinner);
         fuelTypeSpinner = (Spinner) findViewById(R.id.fuelType);
+        userSpinner = (Spinner) findViewById(R.id.userSpinner);
+
         // Spinner click listener
         vSpinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
         fuelTypeSpinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
+        userSpinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
+
+        // Spinner Drop down elements - User types
+        List<String> users = new ArrayList<String>();
+        users.add("Vehicle Owner");
+        users.add("Station Owner");
+        users.add("Station Worker");
 
         // Spinner Drop down elements - vehicle type
         List<String> vehicle = new ArrayList<String>();
@@ -70,6 +79,13 @@ public class VehicleOwnerRegister extends AppCompatActivity implements AdapterVi
         List<String> fuel = new ArrayList<String>();
         fuel.add("Petrol");
         fuel.add("Diesel");
+
+        // Creating adapter for spinner
+        ArrayAdapter<String> dataAdapterTypeForUsers = new ArrayAdapter<String>(getApplicationContext(), R.layout.spinner_item, fuel);
+        // Drop down layout style - list view with radio button
+        dataAdapterTypeForUsers.setDropDownViewResource(R.layout.spinner_dropdown_item);
+        // attaching data adapter to spinner
+        userSpinner.setAdapter(dataAdapterTypeForUsers);
 
         // Creating adapter for spinner
         ArrayAdapter<String> dataAdapterTypeForVehicle = new ArrayAdapter<String>(getApplicationContext(), R.layout.spinner_item, vehicle);
@@ -84,7 +100,6 @@ public class VehicleOwnerRegister extends AppCompatActivity implements AdapterVi
         dataAdapterTypeForFuel.setDropDownViewResource(R.layout.spinner_dropdown_item);
         // attaching data adapter to spinner
         fuelTypeSpinner.setAdapter(dataAdapterTypeForFuel);
-
 
         //url
         String ENDPOINTURL = "http://192.168.43.90:8088/api/FuelPass/CreateVehicleOwner";
