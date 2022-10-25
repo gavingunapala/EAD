@@ -30,15 +30,15 @@ public class VehicleOwnerRegister extends AppCompatActivity implements AdapterVi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vehicle_owner_register);
 
-        buttonRegister = (Button) findViewById(R.id.btnSignup);
+        buttonRegister = (Button) findViewById(R.id.buttonUpdate);
 
         //Edit Texts
         name=findViewById( R.id.userName);
-        NIC=findViewById( R.id.editTextNICNumber);
-        mobileNumber=findViewById( R.id.editTextMobile);
+        NIC=findViewById( R.id.editTextTextOwnerNIC);
+        mobileNumber=findViewById( R.id.editTextOwnerPhone);
         vehicleNumber=findViewById( R.id.vehicleNumber);
 //        VehicleType=findViewById( R.id.editTextVehicleNumber);
-        password=findViewById( R.id.password);
+        password=findViewById( R.id.editTextTextPassword2);
 //        FuelType=findViewById( R.id.);
 
         //vehicle type & fuel type Selection
