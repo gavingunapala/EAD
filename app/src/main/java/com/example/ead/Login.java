@@ -32,8 +32,7 @@ public class Login extends AppCompatActivity implements AdapterView.OnItemSelect
 
     private Button btnLogin, btnSignup;
     EditText userName , password;
-    //spinner -user selection
-    Spinner usersSpinner;
+
     public static String userType;
 
     @SuppressLint("MissingInflatedId")
@@ -43,7 +42,7 @@ public class Login extends AppCompatActivity implements AdapterView.OnItemSelect
         setContentView(R.layout.activity_login);
 
         btnLogin = (Button) findViewById(R.id.btnLogin);
-        btnSignup = (Button) findViewById(R.id.buttonReg);
+        btnSignup = (Button) findViewById(R.id.buttonUpdate);
 
         userName=findViewById( R.id.userName);
         password = findViewById(R.id.editTextTextPassword2);
@@ -99,8 +98,8 @@ public class Login extends AppCompatActivity implements AdapterView.OnItemSelect
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), VehicleOwnerRegister.class);
-                startActivityForResult(myIntent, 0);
+                Intent myIntent = new Intent(Login.this, VehicleOwnerRegister.class);
+                startActivity(myIntent);
             }
         });
 

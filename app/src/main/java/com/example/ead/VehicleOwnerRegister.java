@@ -30,7 +30,7 @@ import java.util.List;
 public class VehicleOwnerRegister extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
     private Button buttonRegister;
-    EditText name , NIC , mobileNumber , vehicleNumber , VehicleType , password , FuelType;
+    EditText name , FuelAmount , mobileNumber , vehicleNumber , password;
     //spinner - vehicle type & fuel type, user selection
     Spinner vSpinner, fuelTypeSpinner, userSpinner;
     public static String vehicleType, fuelType;
@@ -45,12 +45,10 @@ public class VehicleOwnerRegister extends AppCompatActivity implements AdapterVi
 
         //Edit Texts
         name=findViewById( R.id.userName);
-        NIC=findViewById( R.id.editTextTextOwnerNIC);
+        FuelAmount=findViewById( R.id.editTextFuelAmount);
         mobileNumber=findViewById( R.id.editTextOwnerPhone);
         vehicleNumber=findViewById( R.id.vehicleNumber);
-//        VehicleType=findViewById( R.id.editTextVehicleNumber);
         password=findViewById( R.id.editTextTextPassword2);
-//        FuelType=findViewById( R.id.);
 
         //vehicle type & fuel type Selection
         // spinner element
@@ -81,7 +79,7 @@ public class VehicleOwnerRegister extends AppCompatActivity implements AdapterVi
         fuel.add("Diesel");
 
         // Creating adapter for spinner
-        ArrayAdapter<String> dataAdapterTypeForUsers = new ArrayAdapter<String>(getApplicationContext(), R.layout.spinner_item, fuel);
+        ArrayAdapter<String> dataAdapterTypeForUsers = new ArrayAdapter<String>(getApplicationContext(), R.layout.spinner_item, users);
         // Drop down layout style - list view with radio button
         dataAdapterTypeForUsers.setDropDownViewResource(R.layout.spinner_dropdown_item);
         // attaching data adapter to spinner
@@ -102,48 +100,39 @@ public class VehicleOwnerRegister extends AppCompatActivity implements AdapterVi
         fuelTypeSpinner.setAdapter(dataAdapterTypeForFuel);
 
         //url
-        String ENDPOINTURL = "http://192.168.43.90:8088/api/FuelPass/CreateVehicleOwner";
+        String ENDPOINTURL = "http://192.168.43.90:8088/api/FuelPass/Register";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String username = name.getText().toString();
-                String nic = NIC.getText().toString();
+                String fuelamount = FuelAmount.getText().toString();
                 String mobilenumber = mobileNumber.getText().toString();
                 String vehiclenumber = vehicleNumber.getText().toString();
                 String pass = password.getText().toString();
+                String userspinner = userSpinner.getSelectedItem().toString();
+                String vspinner = vSpinner.getSelectedItem().toString();
+                String fueltypespinner = fuelTypeSpinner.getSelectedItem().toString();
 
 
-
-                //////////convert to json
-                //set to  object
-//                VOwner vowner = new VOwner();
-//                vowner.setName(username);
-//                vowner.setNIC(nic);
-//                vowner.setMobileNumber(mobilenumber);
-//                vowner.setVehicleNumber(vehiclenumber);
-//                vowner.setPassword(pass);
-//
-//                Gson json= new Gson();
-//
-//                JSONObject object = json.toJson(vowner);
 
                 JSONObject object = new JSONObject();
                 try {
-                    object.put("id","21E0CB9935A9F200A7ED42CA");
-                    object.put("vehicleNumber",nic);
+                    object.put("userRole",userspinner);
                     object.put("userName",username);
-                    object.put("vehicleType",mobilenumber);
-                    object.put("fueltype",vehiclenumber);
-                    object.put("fuelAmount",123);
+                    object.put("mobileNumber",mobilenumber);
+                    object.put("vehicleNumber",vehiclenumber);
+                    object.put("vehicleType",vspinner);
+                    object.put("fuelType",fueltypespinner);
+                    object.put("fuelAmount",fuelamount);
                     object.put("password",pass);
 
 
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                Log.e("asasasaaaaaaaaaa",object.toString());
+                Log.e("User Register",object.toString());
 
                 Toast.makeText(VehicleOwnerRegister.this, "Registration Success "+ object +"", Toast.LENGTH_SHORT).show();
                 JsonObjectRequest objectRequest = new JsonObjectRequest(
@@ -154,7 +143,6 @@ public class VehicleOwnerRegister extends AppCompatActivity implements AdapterVi
                             @Override
                             public void onResponse(JSONObject response) {
                                 Log.e("Rest Response", response.toString());
-
                             }
                         },
                         new Response.ErrorListener() {
