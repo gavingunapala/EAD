@@ -18,7 +18,7 @@ public class FuelStatus extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fuel_status);
 
-        buttonSubmitStatus = (Button) findViewById(R.id.buttonUpdate);
+        buttonSubmitStatus = (Button) findViewById(R.id.buttonReg);
 
         buttonSubmitStatus.setOnClickListener(new View.OnClickListener() {
             @Override

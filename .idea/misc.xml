@@ -48,8 +48,10 @@
         <entry key="..\:/EAD/app/src/main/res/layout/activity_vehicle_owner_register.xml" value="0.26157407407407407" />
         <entry key="..\:/EAD/app/src/main/res/layout/activity_vehicle_owner_view_station.xml" value="0.2359375" />
         <entry key="..\:/EAD/app/src/main/res/layout/activity_view_members.xml" value="0.2359375" />
+        <entry key="..\:/EAD/app/src/main/res/layout/fragment_home.xml" value="0.13020833333333334" />
         <entry key="..\:/EAD/app/src/main/res/layout/spinner_worker_item.xml" value="0.12708333333333333" />
         <entry key="..\:/EAD/app/src/main/res/layout/spinner_worker_type.xml" value="0.12708333333333333" />
+        <entry key="..\:/EAD/app/src/main/res/menu/main_menu.xml" value="0.264" />
       </map>
     </option>
   </component>
