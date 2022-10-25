@@ -15,7 +15,7 @@
             android:layout_width="281dp"
             android:layout_height="46dp"
             android:layout_marginTop="24dp"
-            android:text="Vehicle Owner Register"
+            android:text="Register"
             android:textAlignment="center"
             android:textColor="#4592AF"
             android:textSize="24sp"
@@ -24,12 +24,43 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/textView33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="24dp"
+            android:text="Select User Type"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/userSpinner"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewWel"
+            app:layout_constraintVertical_bias="0.157"
+            tools:ignore="MissingConstraints" />
+
+        <Spinner
+            android:id="@+id/userSpinner"
+            android:layout_width="0dp"
+            android:layout_height="53dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="140dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/round_border"
+            android:padding="16dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
+
         <EditText
             android:id="@+id/userName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="140dp"
             android:layout_marginEnd="32dp"
             android:background="@drawable/round_border"
             android:drawableStart="@drawable/ic_user"
@@ -39,29 +70,9 @@
             android:inputType="text"
             android:padding="16dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewWel"
-            tools:ignore="MissingConstraints" />
-
-        <EditText
-            android:id="@+id/editTextTextOwnerNIC"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="28dp"
-            android:layout_marginEnd="32dp"
-            android:background="@drawable/round_border"
-            android:drawableStart="@drawable/ic_nic"
-            android:drawablePadding="16dp"
-            android:ems="10"
-            android:hint="NIC Number"
-            android:inputType="number"
-            android:padding="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/userName"
+            app:layout_constraintTop_toBottomOf="@+id/textViewWel"
             tools:ignore="MissingConstraints" />
 
         <EditText
@@ -69,7 +80,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
             android:background="@drawable/round_border"
             android:drawableStart="@drawable/ic_mobile"
@@ -81,26 +92,24 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextOwnerNIC"
+            app:layout_constraintTop_toBottomOf="@+id/userName"
             tools:ignore="MissingConstraints" />
 
         <Spinner
-            android:id="@+id/usersSpinner"
+            android:id="@+id/vehicleSpinner"
             android:layout_width="0dp"
             android:layout_height="53dp"
             android:layout_gravity="center"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
             android:background="@drawable/round_border"
             android:padding="16dp"
             android:spinnerMode="dropdown"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextOwnerPhone"
-            app:layout_constraintVertical_bias="0.114"
+            app:layout_constraintTop_toBottomOf="@+id/textViewVehicleT"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <EditText
@@ -108,7 +117,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="32dp"
             android:background="@drawable/round_border"
             android:drawableStart="@drawable/ic_vehicle"
@@ -120,38 +129,32 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/usersSpinner"
+            app:layout_constraintTop_toBottomOf="@+id/editTextOwnerPhone"
             tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/textViewVehicleT"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginTop="20dp"
             android:text="Vehicle Types"
             android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/usersSpinner"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.111"
+            app:layout_constraintHorizontal_bias="0.153"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextOwnerPhone"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/vehicleNumber" />
 
         <TextView
             android:id="@+id/textViewVehicleT2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="42dp"
             android:text="Fuel Types"
             android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/fuelType"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.126"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/vehicleNumber"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/vehicleSpinner"/>
 
         <Spinner
             android:id="@+id/fuelType"
@@ -159,25 +162,45 @@
             android:layout_height="53dp"
             android:layout_gravity="center"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="24dp"
             android:layout_marginEnd="32dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/round_border"
             android:padding="16dp"
             android:spinnerMode="dropdown"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/vehicleNumber"
-            app:layout_constraintVertical_bias="0.181"
-            tools:ignore="SpeakableTextPresentCheck" />
+            tools:ignore="SpeakableTextPresentCheck"
+            tools:layout_editor_absoluteY="546dp"
+            app:layout_constraintTop_toBottomOf="@+id/textViewVehicleT2"/>
+
+        <EditText
+            android:id="@+id/editTextFuelAmount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_border"
+            android:drawableStart="@drawable/ic_fuel"
+            android:drawablePadding="16dp"
+            android:ems="10"
+            android:hint="Fuel Amount"
+            android:inputType="number"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="288dp"
+            app:layout_constraintTop_toBottomOf="@+id/fuelType"/>
 
         <EditText
             android:id="@+id/editTextTextPassword2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="32dp"
             android:background="@drawable/round_border"
             android:drawableStart="@drawable/ic_password"
@@ -189,7 +212,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fuelType"
+            app:layout_constraintTop_toBottomOf="@+id/editTextFuelAmount"
             tools:ignore="MissingConstraints" />
 
         <Button
@@ -199,6 +222,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="32dp"
+            android:layout_marginBottom="25dp"
             android:background="@drawable/round_border"
             android:text="Sign Up"
             android:textSize="20sp"
@@ -208,7 +232,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2"
-            app:layout_constraintVertical_bias="0.094" />
+            app:layout_constraintVertical_bias="1.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
