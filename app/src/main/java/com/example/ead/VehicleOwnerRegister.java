@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -12,6 +13,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +41,7 @@ public class VehicleOwnerRegister extends AppCompatActivity implements AdapterVi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vehicle_owner_register);
 
-        buttonRegister = (Button) findViewById(R.id.buttonUpdate);
+        buttonRegister = (Button) findViewById(R.id.buttonReg);
 
         //Edit Texts
         name=findViewById( R.id.userName);
@@ -74,6 +85,11 @@ public class VehicleOwnerRegister extends AppCompatActivity implements AdapterVi
         // attaching data adapter to spinner
         fuelTypeSpinner.setAdapter(dataAdapterTypeForFuel);
 
+
+        //url
+        String ENDPOINTURL = "http://192.168.43.90:8088/api/FuelPass/CreateVehicleOwner";
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -83,14 +99,64 @@ public class VehicleOwnerRegister extends AppCompatActivity implements AdapterVi
                 String vehiclenumber = vehicleNumber.getText().toString();
                 String pass = password.getText().toString();
 
-                Toast.makeText(VehicleOwnerRegister.this, "Registration Success "+username + nic + mobilenumber +
-                        vehiclenumber + pass +"", Toast.LENGTH_SHORT).show();
 
+
+                //////////convert to json
+                //set to  object
+//                VOwner vowner = new VOwner();
+//                vowner.setName(username);
+//                vowner.setNIC(nic);
+//                vowner.setMobileNumber(mobilenumber);
+//                vowner.setVehicleNumber(vehiclenumber);
+//                vowner.setPassword(pass);
+//
+//                Gson json= new Gson();
+//
+//                JSONObject object = json.toJson(vowner);
+
+                JSONObject object = new JSONObject();
+                try {
+                    object.put("id","21E0CB9935A9F200A7ED42CA");
+                    object.put("vehicleNumber",nic);
+                    object.put("userName",username);
+                    object.put("vehicleType",mobilenumber);
+                    object.put("fueltype",vehiclenumber);
+                    object.put("fuelAmount",123);
+                    object.put("password",pass);
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                Log.e("asasasaaaaaaaaaa",object.toString());
+
+                Toast.makeText(VehicleOwnerRegister.this, "Registration Success "+ object +"", Toast.LENGTH_SHORT).show();
+                JsonObjectRequest objectRequest = new JsonObjectRequest(
+                        Request.Method.POST,
+                        ENDPOINTURL,
+                        object,
+                        new Response.Listener<JSONObject>() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                Log.e("Rest Response", response.toString());
+
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Log.e("Rest Response", error.toString());
+                            }
+                        }
+                );
+                requestQueue.add(objectRequest);
+                /////////////
                 Intent myIntent = new Intent(view.getContext(), Login.class);
                 startActivityForResult(myIntent, 0);
             }
         });
     }
+
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
