@@ -70,7 +70,6 @@ public class VehicleOwnerProfile extends AppCompatActivity implements AdapterVie
                     @Override
                     public void onResponse(JSONObject response) {
                         Log.e("Rest Response", response.toString());
-
                     }
                 },
                 new Response.ErrorListener() {
@@ -82,6 +81,9 @@ public class VehicleOwnerProfile extends AppCompatActivity implements AdapterVie
         );
         requestQueue.add(objectRequest);
         /////////////
+
+        //set all textviews to default values
+        name.setText((CharSequence)"nam");
 
         // Spinner Drop down elements - vehicle type
         List<String> vehicle = new ArrayList<String>();
