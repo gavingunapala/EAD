@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.ead.common.MainActivity;
-
 public class Login extends AppCompatActivity {
     private Button btnLogin, btnSignup;
     EditText userName , password;
@@ -22,10 +20,10 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         btnLogin = (Button) findViewById(R.id.btnLogin);
-        btnSignup = (Button) findViewById(R.id.btnSignup);
+        btnSignup = (Button) findViewById(R.id.buttonUpdate);
 
         userName=findViewById( R.id.userName);
-        password = findViewById(R.id.password);
+        password = findViewById(R.id.editTextTextPassword2);
         //remove this
 //        remove_home = (Button) findViewById(R.id.remove_home);
 //        remove_station_home = (Button) findViewById(R.id.remove_station_home);
