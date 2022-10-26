@@ -84,7 +84,7 @@ public class Login extends AppCompatActivity implements AdapterView.OnItemSelect
                             }
                     );
                     requestQueue.add(objectRequest);
-                    Intent intent = new Intent(Login.this, StationOwnerHome.class);
+                    Intent intent = new Intent(Login.this, MainActivity.class);
                     startActivity(intent);
                 }
                 else

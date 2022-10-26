@@ -193,10 +193,12 @@ public class ViewStation extends AppCompatActivity {
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Log.e("main activity","item clicked");
-                    startActivity(new Intent(ViewStation.this,StationItemPreview.class)
-                            .putExtra("items", (CharSequence) fuelModelListFiltered.get(position))
-                            );
+//                    Log.e("mainactivity","item clicked");
+//                    startActivity(new Intent(ViewStation.this,StationItemPreview.class)
+////                            .putExtra("items", (CharSequence) fuelModelListFiltered.get(position))
+//                            );
+                    Intent myIntent = new Intent(ViewStation.this, StationItemPreview.class);
+                    startActivity(myIntent);
                 }
             });
 
