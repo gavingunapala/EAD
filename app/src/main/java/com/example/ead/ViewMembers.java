@@ -16,16 +16,16 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONObject;
 
 public class ViewMembers extends AppCompatActivity {
-
+    String userid = "35112512A5C78DCB837C7B53";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_members);
 
         //url
-        String userid = "35112512A5C78DCB837C7B53";
 
-        String ENDPOINTURL = "http://192.168.43.90:8088/api/FuelPass/GetStationWorkersById/"+userid;
+
+        String ENDPOINTURL = "http://192.168.43.90:8088/api/FuelPass/GetStationWorkersById/";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
 //        Toast.makeText(ViewMembers.this, "Registration Success "+ stationWorker +"", Toast.LENGTH_SHORT).show();
