@@ -11,6 +11,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -22,6 +24,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.ead.FuelStatus;
 import com.example.ead.R;
 import com.example.ead.VehicleOwnerProfile;
+import com.example.ead.ViewMembers;
 import com.google.android.material.navigation.NavigationView;
 
 import org.json.JSONObject;
@@ -31,12 +34,14 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
+    private Button btnLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //initialize the toolbar
         //url and get data from database
         String ENDPOINTURL = "http://192.168.43.90:8088/api/FuelPass/GetStations";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
@@ -71,19 +76,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //initiate the drawer
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        //new ActionBarDrawerToggle variable creation
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+        //Onclick method for view members
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(view.getContext(), ViewMembers.class);
+                startActivityForResult(myIntent, 0);
+            }
+        });
 
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        //switch for the main navigation pages
         switch (item.getItemId()) {
 //            case R.id.splash:
 //                Intent intent = new Intent(MainActivity.this, HomeFragment.class);
@@ -127,7 +143,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
+//go back from the navigation
     @Override
     public void onBackPressed() {
         if (drawer.isDrawerOpen(GravityCompat.START)) {

@@ -11,13 +11,14 @@ import com.example.ead.R;
 import com.example.ead.UserSelection;
 
 public class SplashScreen extends AppCompatActivity {
+    //Initialize variable
     Thread timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-
+//set time to the animation of the screen
         timer = new Thread(){
             @Override
             public void run() {
