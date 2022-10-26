@@ -32,11 +32,11 @@ public class AddStationWorker extends AppCompatActivity {
 
         buttonRegWorker = (Button) findViewById(R.id.buttonReg);
         //editTexts
-        editTextTextWorkerId=findViewById( R.id.editTextStationREGNo);
-        editTextTextWorkerName=findViewById( R.id.editTextTextOwnerUsername);
-        editTextNICNumber=findViewById( R.id.editTextTextOwnerNIC);
-        editTextPhoneNumber=findViewById( R.id.editTextOwnerPhone);
-        editTextTextWorkerPassword=findViewById( R.id.editTextTextPassword2);
+        editTextTextWorkerId=findViewById( R.id.editTextStationName);
+        editTextTextWorkerName=findViewById( R.id.editTextTextProvince);
+        editTextNICNumber=findViewById( R.id.editTextTextlocation);
+        editTextPhoneNumber=findViewById( R.id.remaingPetrol);
+        editTextTextWorkerPassword=findViewById( R.id.remaingDiesel);
 
 
         //url

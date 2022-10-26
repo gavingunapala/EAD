@@ -48,9 +48,9 @@ public class VehicleOwnerRegister extends AppCompatActivity implements AdapterVi
         //Edit Texts
         name=findViewById( R.id.userName);
         FuelAmount=findViewById( R.id.editTextFuelAmount);
-        mobileNumber=findViewById( R.id.editTextOwnerPhone);
+        mobileNumber=findViewById( R.id.remaingPetrol);
         vehicleNumber=findViewById( R.id.vehicleNumber);
-        password=findViewById( R.id.editTextTextPassword2);
+        password=findViewById( R.id.remaingDiesel);
 
         //vehicle type & fuel type Selection
         // spinner element

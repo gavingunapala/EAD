@@ -8,10 +8,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -24,9 +22,6 @@ import com.example.ead.common.MainActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Login extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
     //Initialize variables
@@ -45,7 +40,7 @@ public class Login extends AppCompatActivity implements AdapterView.OnItemSelect
         btnSignup = (Button) findViewById(R.id.buttonUpdate);
 
         userName=findViewById( R.id.userName);
-        password = findViewById(R.id.editTextTextPassword2);
+        password = findViewById(R.id.remaingDiesel);
 
         //url
         String ENDPOINTURL = "http://192.168.43.90:8088/api/FuelPass/Login";
@@ -89,7 +84,7 @@ public class Login extends AppCompatActivity implements AdapterView.OnItemSelect
                     );
                     requestQueue.add(objectRequest);
 
-                    Intent intent = new Intent(Login.this, MainActivity.class);
+                    Intent intent = new Intent(Login.this, StationOwnerHome.class);
                     startActivity(intent);
 
             }

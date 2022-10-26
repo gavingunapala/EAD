@@ -11,6 +11,8 @@ public class StationOwnerHome extends AppCompatActivity {
     //Initialize variables
     private Button buttonAddMem, buttonViewMem, buttonFuelStatus, buttonFuelTime , Owner_Profile_button;
 
+    private Button buttonAddMem, buttonViewMem, buttonFuelStatus, buttonFuelTime , Owner_Profile_button , Addstation_button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +24,7 @@ public class StationOwnerHome extends AppCompatActivity {
         buttonFuelStatus = (Button) findViewById(R.id.buttonFuelStatus);
         buttonFuelTime = (Button) findViewById(R.id.buttonFuelTime);
         Owner_Profile_button = (Button) findViewById(R.id.Owner_Profile_button);
+        Addstation_button = (Button) findViewById(R.id.AddStation);
 
         //Onclick method for add members
         buttonAddMem.setOnClickListener(new View.OnClickListener() {
@@ -37,6 +40,13 @@ public class StationOwnerHome extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(view.getContext(), ViewMembers.class);
+                startActivityForResult(myIntent, 0);
+            }
+        });
+        Addstation_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(view.getContext(), AddStation.class);
                 startActivityForResult(myIntent, 0);
             }
         });

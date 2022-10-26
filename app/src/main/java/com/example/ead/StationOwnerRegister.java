@@ -6,9 +6,6 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.Volley;
-
 public class StationOwnerRegister extends AppCompatActivity {
 
     //Initialize variables
@@ -21,12 +18,12 @@ public class StationOwnerRegister extends AppCompatActivity {
         //Assign variables
         ButtonReg = (Button) findViewById(R.id.buttonReg);
         //editTexts
-        editTextTextOwnerUsername=findViewById( R.id.editTextTextOwnerUsername);
-        editTextTextOwnerNIC=findViewById( R.id.editTextTextOwnerNIC);
-        editTextOwnerPhone=findViewById( R.id.editTextOwnerPhone);
-        editTextStationREGNo=findViewById( R.id.editTextStationREGNo);
+        editTextTextOwnerUsername=findViewById( R.id.editTextTextProvince);
+        editTextTextOwnerNIC=findViewById( R.id.editTextTextlocation);
+        editTextOwnerPhone=findViewById( R.id.remaingPetrol);
+        editTextStationREGNo=findViewById( R.id.editTextStationName);
         editTextTextLocation=findViewById( R.id.editTextTextLocation);
-        editTextTextPassword2=findViewById( R.id.editTextTextPassword2);
+        editTextTextPassword2=findViewById( R.id.remaingDiesel);
 
 
         super.onCreate(savedInstanceState);
