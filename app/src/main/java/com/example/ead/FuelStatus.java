@@ -30,10 +30,12 @@ import java.util.List;
 import java.util.Map;
 
 public class FuelStatus extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-
+    //Initialize variables
     private Button pUpdate, dUpdate;
-    Spinner DiesalSpinner, PetrolSpinner;
+    //spinner - fuel types
+    Spinner DieselSpinner, PetrolSpinner;
     public static String petrolType, dieselType;
+    // //Assign the id
     String ptypespinner;
     String Stationid = "6358cd88ee232c8194e2f5c6";
 
@@ -42,51 +44,63 @@ public class FuelStatus extends AppCompatActivity implements AdapterView.OnItemS
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fuel_status);
 
+        //Assign variables
         pUpdate= (Button) findViewById(R.id.button2);
         dUpdate= (Button) findViewById(R.id.button3);
+
         // spinner element
-        DiesalSpinner = (Spinner) findViewById(R.id.PetrolSpinner);
+        DieselSpinner = (Spinner) findViewById(R.id.PetrolSpinner);
         PetrolSpinner = (Spinner) findViewById(R.id.DieselSpinner);
 
         // Spinner click listener
-        DiesalSpinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
+        DieselSpinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
         PetrolSpinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
 
-        // Spinner Drop down elements - User types
-        List<String> pet = new ArrayList<String>();
-        pet.add("Avalable");
-        pet.add("NotAvalable");
+        // Spinner Drop down elements - Petrol types
+        List<String> petrol = new ArrayList<String>();
+        petrol.add("Available");
+        petrol.add("Not Available");
 
-
-        // Spinner Drop down elements - vehicle type
-        List<String> die = new ArrayList<String>();
-        die.add("Avalable");
-        die.add("NotAvalable");
+        // Spinner Drop down elements - Diesel type
+        List<String> diesel = new ArrayList<String>();
+        diesel.add("Available");
+        diesel.add("Not Available");
 
         // Creating adapter for spinner
-        ArrayAdapter<String> dataAdapterTypeForPetrol = new ArrayAdapter<String>(getApplicationContext(), R.layout.spinner_item, pet);
+        ArrayAdapter<String> dataAdapterTypeForPetrol = new ArrayAdapter<String>(getApplicationContext(), R.layout.spinner_item, petrol);
         // Drop down layout style - list view with radio button
         dataAdapterTypeForPetrol.setDropDownViewResource(R.layout.spinner_dropdown_item);
         // attaching data adapter to spinner
         PetrolSpinner.setAdapter(dataAdapterTypeForPetrol);
 
         // Creating adapter for spinner
-        ArrayAdapter<String> dataAdapterTypeForDiesal = new ArrayAdapter<String>(getApplicationContext(), R.layout.spinner_item, die);
+        ArrayAdapter<String> dataAdapterTypeForDiesel = new ArrayAdapter<String>(getApplicationContext(), R.layout.spinner_item, diesel);
         // Drop down layout style - list view with radio button
-        dataAdapterTypeForDiesal.setDropDownViewResource(R.layout.spinner_dropdown_item);
+        dataAdapterTypeForDiesel.setDropDownViewResource(R.layout.spinner_dropdown_item);
         // attaching data adapter to spinner
-        DiesalSpinner.setAdapter(dataAdapterTypeForDiesal);
+        DieselSpinner.setAdapter(dataAdapterTypeForDiesel);
 
-
+        final String[] ptypespinner = {null};
         //url
-        String ENDPOINTURL = "http://192.168.43.90:8088/api/FuelPass/UpdatePetrolQStatus/"+ptypespinner;
+        String ENDPOINTURL = "http://192.168.43.90:8088/api/FuelPass/UpdatePetrolQStatus/"+ ptypespinner[0];
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
         pUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ptypespinner = PetrolSpinner.getSelectedItem().toString();
-                Log.e("Spinner checked", ptypespinner);
+                ptypespinner[0] = PetrolSpinner.getSelectedItem().toString();
+
+//                String ptypespinner = PetrolSpinner.getSelectedItem().toString();
+//
+                JSONObject object = new JSONObject();
+                try {
+                    object.put("QueueStatus",ptypespinner);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                Log.e("User Register",object.toString());
+
+                Toast.makeText(FuelStatus.this, "Registration Success "+ object +"", Toast.LENGTH_SHORT).show();
                 JsonObjectRequest objectRequest = new JsonObjectRequest(
                         Request.Method.PATCH,
                         ENDPOINTURL,
