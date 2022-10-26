@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -54,6 +55,7 @@ public class Login extends AppCompatActivity implements AdapterView.OnItemSelect
                 String uname = userName.getText().toString();
                 String pwd = password.getText().toString();
 
+                if (!TextUtils.isEmpty(userName.getText().toString().trim()) && !TextUtils.isEmpty(password.getText().toString().trim())) {
                     //create new Json object
                     JSONObject object = new JSONObject();
                     try {
@@ -64,7 +66,6 @@ public class Login extends AppCompatActivity implements AdapterView.OnItemSelect
                     }
                     Log.e("Vehicle user Loged in",object.toString());
 
-                    Toast.makeText(Login.this, "Registration Success "+ object +"", Toast.LENGTH_SHORT).show();
                     JsonObjectRequest objectRequest = new JsonObjectRequest(
                             Request.Method.POST,
                             ENDPOINTURL,
@@ -72,21 +73,24 @@ public class Login extends AppCompatActivity implements AdapterView.OnItemSelect
                             new Response.Listener<JSONObject>() {
                                 @Override
                                 public void onResponse(JSONObject response) {
-                                    Log.e("Rest Response", response.toString());
+                                    Log.e("Rest Response", String.valueOf(response));
                                 }
                             },
                             new Response.ErrorListener() {
                                 @Override
                                 public void onErrorResponse(VolleyError error) {
-                                    Log.e("Rest Response", error.toString());
+                                    Log.e("Rest err", error.toString());
                                 }
                             }
                     );
                     requestQueue.add(objectRequest);
-
-                    Intent intent = new Intent(Login.this, MainActivity.class);
+                    Intent intent = new Intent(Login.this, StationOwnerHome.class);
                     startActivity(intent);
-
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(), "user is not exist", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

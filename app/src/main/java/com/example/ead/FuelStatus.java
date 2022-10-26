@@ -34,6 +34,7 @@ public class FuelStatus extends AppCompatActivity implements AdapterView.OnItemS
     private Button pUpdate, dUpdate;
     Spinner DiesalSpinner, PetrolSpinner;
     public static String petrolType, dieselType;
+    String ptypespinner;
     String Stationid = "6358cd88ee232c8194e2f5c6";
 
     @Override
@@ -76,8 +77,7 @@ public class FuelStatus extends AppCompatActivity implements AdapterView.OnItemS
         // attaching data adapter to spinner
         DiesalSpinner.setAdapter(dataAdapterTypeForDiesal);
 
-        String ptypespinner = PetrolSpinner.getSelectedItem().toString();
-        Log.e("Spinner checked", ptypespinner);
+
         //url
         String ENDPOINTURL = "http://192.168.43.90:8088/api/FuelPass/UpdatePetrolQStatus/"+ptypespinner;
         RequestQueue requestQueue = Volley.newRequestQueue(this);
@@ -85,6 +85,8 @@ public class FuelStatus extends AppCompatActivity implements AdapterView.OnItemS
         pUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ptypespinner = PetrolSpinner.getSelectedItem().toString();
+                Log.e("Spinner checked", ptypespinner);
                 JsonObjectRequest objectRequest = new JsonObjectRequest(
                         Request.Method.PATCH,
                         ENDPOINTURL,

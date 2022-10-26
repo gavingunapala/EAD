@@ -31,7 +31,7 @@ public class FuelArrivalTime extends AppCompatActivity {
         //Assign variables
         textViewArriaval = findViewById(R.id.textViewArriaval);
         textViewFinished = findViewById(R.id.textViewFinished);
-//        buttonUpdateTime = findViewById(R.id.buttonUpdateTime);
+        buttonUpdateTime = findViewById(R.id.buttonReg);
 
         //onclick for the update time
         buttonUpdateTime.setOnClickListener(new View.OnClickListener() {
