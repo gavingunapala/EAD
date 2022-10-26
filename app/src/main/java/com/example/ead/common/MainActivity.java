@@ -22,6 +22,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.ead.FuelStatus;
+import com.example.ead.Login;
 import com.example.ead.R;
 import com.example.ead.VehicleOwnerProfile;
 import com.example.ead.ViewMembers;
@@ -90,10 +91,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent intent6 = new Intent(getApplicationContext(), FuelStatus.class);
                 startActivity(intent6);
                 break;
-//            case R.id.explore_station:
-//                Intent intent3 = new Intent(getApplicationContext(), MainActivity.class);
-//                startActivity(intent3);
-//                break;
+            case R.id.explore_station:
+                Intent intent3 = new Intent(getApplicationContext(), ViewStation.class);
+                startActivity(intent3);
+                break;
 //            case R.id.nav_payment:
 //                Intent intent4 = new Intent(getApplicationContext(), CreditActivity.class);
 //                startActivity(intent4);
@@ -102,10 +103,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent intent5 = new Intent(getApplicationContext(), VehicleOwnerProfile.class);
                 startActivity(intent5);
                 break;
-//            case R.id.nav_logout:
-//                Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
-//                startActivity(intent2);
-//                break;
+            case R.id.nav_logout:
+                Intent intent2 = new Intent(getApplicationContext(), Login.class);
+                startActivity(intent2);
+                break;
 //            case R.id.nav_share:
 //                Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
 //
