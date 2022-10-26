@@ -11,6 +11,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -22,6 +24,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.ead.FuelStatus;
 import com.example.ead.R;
 import com.example.ead.VehicleOwnerProfile;
+import com.example.ead.ViewMembers;
 import com.google.android.material.navigation.NavigationView;
 
 import org.json.JSONObject;
@@ -31,6 +34,7 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
+    private Button btnLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +86,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+        //Onclick method for view members
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(view.getContext(), ViewMembers.class);
+                startActivityForResult(myIntent, 0);
+            }
+        });
 
     }
 

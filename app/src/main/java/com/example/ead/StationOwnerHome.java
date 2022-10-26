@@ -9,9 +9,7 @@ import android.widget.Button;
 
 public class StationOwnerHome extends AppCompatActivity {
     //Initialize variables
-    private Button buttonAddMem, buttonViewMem, buttonFuelStatus, buttonFuelTime , Owner_Profile_button;
-
-    private Button buttonAddMem, buttonViewMem, buttonFuelStatus, buttonFuelTime , Owner_Profile_button , Addstation_button;
+    private Button buttonAddMem, buttonViewMem, buttonFuelStatus, buttonFuelTime , Owner_Profile_button, Addstation_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
