@@ -28,7 +28,7 @@ public class StationOwnerHome extends AppCompatActivity {
         buttonAddMem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), AddStationWorker.class);
+                Intent myIntent = new Intent(view.getContext(), VehicleOwnerRegister.class);
                 startActivityForResult(myIntent, 0);
             }
         });

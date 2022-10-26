@@ -25,6 +25,7 @@ import com.example.ead.FuelStatus;
 import com.example.ead.R;
 import com.example.ead.VehicleOwnerProfile;
 import com.example.ead.ViewMembers;
+import com.example.ead.ViewStation;
 import com.google.android.material.navigation.NavigationView;
 
 import org.json.JSONObject;
@@ -41,36 +42,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        btnLogin = (Button) findViewById(R.id.btnLogin);
         //initialize the toolbar
-        //url and get data from database
-        String ENDPOINTURL = "http://192.168.43.90:8088/api/FuelPass/GetStations";
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        JsonObjectRequest objectRequest = new JsonObjectRequest(
-                Request.Method.GET,
-                ENDPOINTURL,
-                null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Log.e("Rest Response", response.toString());
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e("Rest Response", error.toString());
-                    }
-                }
-        ){
-            @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                final Map<String, String> headers = new HashMap<>();
-                headers.put("userId", "63581220bc5baef989b97d1e");//put your token here
-                return headers;
-            }
-        };
-        requestQueue.add(objectRequest);
-        /////////////
 
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -90,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), ViewMembers.class);
+                Intent myIntent = new Intent(view.getContext(), ViewStation.class);
                 startActivityForResult(myIntent, 0);
             }
         });
