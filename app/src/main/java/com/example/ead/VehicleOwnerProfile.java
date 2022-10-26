@@ -13,25 +13,33 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class VehicleOwnerProfile extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
     private Button buttonUpdateProfile;
-    EditText name , NIC , mobileNumber , vehicleNumber , VehicleType , password , FuelType;
+    EditText name , FuelAmount , mobileNumber , vehicleNumber , password;
     //spinner - vehicle type & fuel type
     Spinner vehicleSpinner, fuelSpinner, userSpinner;
     public static String vehicleType, fuelType;
+
+    Gson json=new Gson();
+    JSONObject obj = new JSONObject();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,11 +50,10 @@ public class VehicleOwnerProfile extends AppCompatActivity implements AdapterVie
 
         //Edit Texts
         name=findViewById( R.id.userName);
+        FuelAmount=findViewById( R.id.editTextFuelAmount);
         mobileNumber=findViewById( R.id.editTextOwnerPhone);
         vehicleNumber=findViewById( R.id.vehicleNumber);
-//        VehicleType=findViewById( R.id.editTextVehicleNumber);
         password=findViewById( R.id.editTextTextPassword2);
-//        FuelType=findViewById( R.id.);
 
         //vehicle type & fuel type Selection
         // spinner element
@@ -59,9 +66,18 @@ public class VehicleOwnerProfile extends AppCompatActivity implements AdapterVie
         fuelSpinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
         userSpinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
 
+
+//        JSONObject object = new JSONObject();
+//        try {
+//            object.put("userId","63581220bc5baef989b97d1e");
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//        Log.e("User Id",object.toString());
+
         //url
-        String userid = "cce50903e943fb5273acc05a";
-        String ENDPOINTURL = "http://192.168.43.90:8088/api/FuelPass/GetVehicleOwnerById/"+userid;
+//        String userid = "63581220bc5baef989b97d1e";
+        String ENDPOINTURL = "http://192.168.43.90:8088/api/FuelPass/GetAuthUser";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         JsonObjectRequest objectRequest = new JsonObjectRequest(
                 Request.Method.GET,
@@ -79,7 +95,14 @@ public class VehicleOwnerProfile extends AppCompatActivity implements AdapterVie
                         Log.e("Rest Response", error.toString());
                     }
                 }
-        );
+        ){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                final Map<String, String> headers = new HashMap<>();
+                headers.put("userId", "63581220bc5baef989b97d1e");//put your token here
+                return headers;
+            }
+        };
         requestQueue.add(objectRequest);
         /////////////
 
@@ -104,7 +127,7 @@ public class VehicleOwnerProfile extends AppCompatActivity implements AdapterVie
         fuel.add("Diesel");
 
         // Creating adapter for spinner
-        ArrayAdapter<String> dataAdapterTypeForUsers = new ArrayAdapter<String>(getApplicationContext(), R.layout.spinner_item, fuel);
+        ArrayAdapter<String> dataAdapterTypeForUsers = new ArrayAdapter<String>(getApplicationContext(), R.layout.spinner_item, users);
         // Drop down layout style - list view with radio button
         dataAdapterTypeForUsers.setDropDownViewResource(R.layout.spinner_dropdown_item);
         // attaching data adapter to spinner
@@ -128,13 +151,17 @@ public class VehicleOwnerProfile extends AppCompatActivity implements AdapterVie
             @Override
             public void onClick(View view) {
                 String username = name.getText().toString();
-                String nic = NIC.getText().toString();
+                String fuelamount = FuelAmount.getText().toString();
                 String mobilenumber = mobileNumber.getText().toString();
                 String vehiclenumber = vehicleNumber.getText().toString();
                 String pass = password.getText().toString();
+                String userspinner = userSpinner.getSelectedItem().toString();
+                String vspinner = vehicleSpinner.getSelectedItem().toString();
+                String fueltypespinner = fuelSpinner.getSelectedItem().toString();
 
-                Toast.makeText(VehicleOwnerProfile.this, "Profile Successfully Updated!"+username + nic + mobilenumber +
-                        vehiclenumber + pass +"", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(VehicleOwnerProfile.this, "Profile Successfully Updated!"+username + mobilenumber +
+//                        vehiclenumber + pass +"", Toast.LENGTH_SHORT).show();
+
 
                 Intent myIntent = new Intent(view.getContext(), Login.class);
                 startActivityForResult(myIntent, 0);
