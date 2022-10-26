@@ -26,7 +26,7 @@
 
 
         <EditText
-            android:id="@+id/editTextStationREGNo"
+            android:id="@+id/editTextStationName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -42,7 +42,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextOwnerPhone"
+            app:layout_constraintTop_toBottomOf="@+id/remaingPetrol"
             tools:ignore="MissingConstraints" />
 
         <EditText
@@ -62,11 +62,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextStationREGNo"
+            app:layout_constraintTop_toBottomOf="@+id/editTextStationName"
             tools:ignore="MissingConstraints" />
 
         <EditText
-            android:id="@+id/editTextTextOwnerUsername"
+            android:id="@+id/editTextTextProvince"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -86,7 +86,7 @@
             tools:ignore="MissingConstraints" />
 
         <EditText
-            android:id="@+id/editTextTextOwnerNIC"
+            android:id="@+id/editTextTextlocation"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -102,11 +102,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextOwnerUsername"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextProvince"
             tools:ignore="MissingConstraints" />
 
         <EditText
-            android:id="@+id/editTextOwnerPhone"
+            android:id="@+id/remaingPetrol"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -122,11 +122,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextOwnerNIC"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextlocation"
             tools:ignore="MissingConstraints" />
 
         <EditText
-            android:id="@+id/editTextTextPassword2"
+            android:id="@+id/remaingDiesel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -161,7 +161,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+            app:layout_constraintTop_toBottomOf="@+id/remaingDiesel" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

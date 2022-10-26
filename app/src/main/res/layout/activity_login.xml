@@ -68,7 +68,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tpview" />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/remaingDiesel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -101,7 +101,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editTextTextPassword2"
+        app:layout_constraintTop_toTopOf="@+id/remaingDiesel"
         app:layout_constraintVertical_bias="0.121" />
 
     <Button
@@ -119,7 +119,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2"
+        app:layout_constraintTop_toBottomOf="@+id/remaingDiesel"
         app:layout_constraintVertical_bias="0.846" />
 
     <TextView
@@ -136,7 +136,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+        app:layout_constraintTop_toBottomOf="@+id/remaingDiesel" />
 
     <TextView
         android:id="@+id/textView7"
