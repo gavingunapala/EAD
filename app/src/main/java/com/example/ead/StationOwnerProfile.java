@@ -3,20 +3,9 @@ package com.example.ead;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
-
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
-
-import org.json.JSONObject;
 
 public class StationOwnerProfile extends AppCompatActivity {
     EditText editTextTextOwnerUsername , editTextTextOwnerNIC , editTextOwnerPhone , editTextStationREGNo , editTextTextLocation , editTextTextPassword2;
@@ -28,12 +17,12 @@ public class StationOwnerProfile extends AppCompatActivity {
         //Buttons
         buttonUpdate = (Button) findViewById(R.id.buttonReg);
         //Edit Texts
-        editTextTextOwnerUsername=findViewById( R.id.editTextTextOwnerUsername);
-        editTextTextOwnerNIC=findViewById( R.id.editTextTextOwnerNIC);
-        editTextOwnerPhone=findViewById( R.id.editTextOwnerPhone);
-        editTextStationREGNo=findViewById( R.id.editTextStationREGNo);
+        editTextTextOwnerUsername=findViewById( R.id.editTextTextProvince);
+        editTextTextOwnerNIC=findViewById( R.id.editTextTextlocation);
+        editTextOwnerPhone=findViewById( R.id.remaingPetrol);
+        editTextStationREGNo=findViewById( R.id.editTextStationName);
         editTextTextLocation=findViewById( R.id.editTextTextLocation);
-        editTextTextPassword2=findViewById( R.id.editTextTextPassword2);
+        editTextTextPassword2=findViewById( R.id.remaingDiesel);
 
 //        //url
 //        String userid = "35112512A5C78DCB837C7B53";

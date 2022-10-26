@@ -11,7 +11,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -22,6 +21,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -37,6 +37,9 @@ public class VehicleOwnerProfile extends AppCompatActivity implements AdapterVie
     //spinner - vehicle type & fuel type
     Spinner vehicleSpinner, fuelSpinner, userSpinner;
     public static String vehicleType, fuelType;
+    String id  = "63581220bc5baef989b97d1e";
+    //data add into the text-https://gist.github.com/codinginflow/aae66a1da7d3d243e03772633770b65e
+    String uRole,uName,mn,vn,vt,ft,fa;
 
     Gson json=new Gson();
     JSONObject obj = new JSONObject();
@@ -51,9 +54,9 @@ public class VehicleOwnerProfile extends AppCompatActivity implements AdapterVie
         //Edit Texts
         name=findViewById( R.id.userName);
         FuelAmount=findViewById( R.id.editTextFuelAmount);
-        mobileNumber=findViewById( R.id.editTextOwnerPhone);
+        mobileNumber=findViewById( R.id.remaingPetrol);
         vehicleNumber=findViewById( R.id.vehicleNumber);
-        password=findViewById( R.id.editTextTextPassword2);
+        password=findViewById( R.id.remaingDiesel);
 
         //vehicle type & fuel type Selection
         // spinner element
@@ -79,35 +82,50 @@ public class VehicleOwnerProfile extends AppCompatActivity implements AdapterVie
 //        String userid = "63581220bc5baef989b97d1e";
         String ENDPOINTURL = "http://192.168.43.90:8088/api/FuelPass/GetAuthUser";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        JsonObjectRequest objectRequest = new JsonObjectRequest(
-                Request.Method.GET,
-                ENDPOINTURL,
-                null,
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, ENDPOINTURL, null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        Log.e("Rest Response", response.toString());
+                        try {
+                            uRole= response.getString("userRole");
+                            uName= response.getString("userName");
+                            mn= response.getString("mobileNumber");
+                            vn= response.getString("vehicleNumber");
+                            vt= response.getString("vehicleType");
+                            ft= response.getString("fuelType");
+                            fa= response.getString("fuelAmount");
+
+                                Log.e("user name", uName + uName + mn );
+
+                            //set all textviews to default values
+//        name.setText((CharSequence)uRole);
+                            name.setText((CharSequence)uName);
+                            mobileNumber.setText((CharSequence)mn);
+                            vehicleNumber.setText((CharSequence)vn);
+//        name.setText((CharSequence)vt);
+//        name.setText((CharSequence)ft);
+                            FuelAmount.setText((CharSequence)fa);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                     }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e("Rest Response", error.toString());
-                    }
-                }
-        ){
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        }){
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 final Map<String, String> headers = new HashMap<>();
-                headers.put("userId", "63581220bc5baef989b97d1e");//put your token here
+                headers.put("userId", id);//put your token here
                 return headers;
             }
         };
-        requestQueue.add(objectRequest);
+        requestQueue.add(request);
         /////////////
 
-        //set all textviews to default values
-        name.setText((CharSequence)"nam");
+
 
         // Spinner Drop down elements - User types
         List<String> users = new ArrayList<String>();
@@ -162,7 +180,7 @@ public class VehicleOwnerProfile extends AppCompatActivity implements AdapterVie
 //                Toast.makeText(VehicleOwnerProfile.this, "Profile Successfully Updated!"+username + mobilenumber +
 //                        vehiclenumber + pass +"", Toast.LENGTH_SHORT).show();
 
-
+                Log.e("update data", username + fuelamount + mobilenumber );
                 Intent myIntent = new Intent(view.getContext(), Login.class);
                 startActivityForResult(myIntent, 0);
             }
