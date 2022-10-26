@@ -27,6 +27,7 @@ import java.util.List;
 
 public class VehicleOwnerProfile extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
+    //Initialize variables
     private Button buttonUpdateProfile;
     EditText name , NIC , mobileNumber , vehicleNumber , VehicleType , password , FuelType;
     //spinner - vehicle type & fuel type
@@ -38,6 +39,7 @@ public class VehicleOwnerProfile extends AppCompatActivity implements AdapterVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vehicle_owner_profile);
 
+        //Assign variables
         buttonUpdateProfile = (Button) findViewById(R.id.buttonReg);
 
         //Edit Texts

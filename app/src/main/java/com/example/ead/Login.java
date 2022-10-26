@@ -29,10 +29,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Login extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
-
+    //Initialize variables
     private Button btnLogin, btnSignup;
     EditText userName , password;
-
     public static String userType;
 
     @SuppressLint("MissingInflatedId")
@@ -41,6 +40,7 @@ public class Login extends AppCompatActivity implements AdapterView.OnItemSelect
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        //Assign variables
         btnLogin = (Button) findViewById(R.id.btnLogin);
         btnSignup = (Button) findViewById(R.id.buttonUpdate);
 
@@ -59,7 +59,7 @@ public class Login extends AppCompatActivity implements AdapterView.OnItemSelect
                 String uname = userName.getText().toString();
                 String pwd = password.getText().toString();
 
-
+                    //create new Json object
                     JSONObject object = new JSONObject();
                     try {
                         object.put("userName",uname);
@@ -95,6 +95,7 @@ public class Login extends AppCompatActivity implements AdapterView.OnItemSelect
             }
         });
 
+        //onclick button for signup
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -102,28 +103,6 @@ public class Login extends AppCompatActivity implements AdapterView.OnItemSelect
                 startActivity(myIntent);
             }
         });
-
-//        btnLogin.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                String username = userName.getText().toString();
-//                String pass = password.getText().toString();
-//
-//                Intent myIntent = new Intent(view.getContext(), VehicleOwnerProfile.class);
-//                startActivityForResult(myIntent, 0);
-//            }
-//        });
-//
-//        btnSignup.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent myIntent = new Intent(view.getContext(), VehicleOwnerRegister.class);
-//                startActivityForResult(myIntent, 0);
-//            }
-//        });
-
-
     }
 
     @Override

@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class StationOwnerHome extends AppCompatActivity {
-
+    //Initialize variables
     private Button buttonAddMem, buttonViewMem, buttonFuelStatus, buttonFuelTime , Owner_Profile_button;
 
     @Override
@@ -16,12 +16,14 @@ public class StationOwnerHome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_station_owner_home);
 
+        //Assign variables
         buttonAddMem = (Button) findViewById(R.id.buttonAddMem);
         buttonViewMem = (Button) findViewById(R.id.buttonViewMem);
         buttonFuelStatus = (Button) findViewById(R.id.buttonFuelStatus);
         buttonFuelTime = (Button) findViewById(R.id.buttonFuelTime);
         Owner_Profile_button = (Button) findViewById(R.id.Owner_Profile_button);
 
+        //Onclick method for add members
         buttonAddMem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -30,6 +32,7 @@ public class StationOwnerHome extends AppCompatActivity {
             }
         });
 
+        //Onclick method for view members
         buttonViewMem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,6 +41,7 @@ public class StationOwnerHome extends AppCompatActivity {
             }
         });
 
+        //Onclick method for fuel status
         buttonFuelStatus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,6 +50,7 @@ public class StationOwnerHome extends AppCompatActivity {
             }
         });
 
+        //Onclick method
         buttonFuelTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,6 +58,8 @@ public class StationOwnerHome extends AppCompatActivity {
                 startActivityForResult(myIntent, 0);
             }
         });
+
+        //Onclick method
         Owner_Profile_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

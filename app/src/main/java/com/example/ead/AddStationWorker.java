@@ -21,7 +21,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class AddStationWorker extends AppCompatActivity {
-
+    //Initialize variables
     private Button buttonRegWorker;
     EditText editTextTextWorkerId , editTextTextWorkerName , editTextNICNumber , editTextPhoneNumber , editTextTextWorkerPassword;
 

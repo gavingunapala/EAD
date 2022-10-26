@@ -19,12 +19,16 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONObject;
 
 public class StationOwnerProfile extends AppCompatActivity {
+    //Initialize variables
     EditText editTextTextOwnerUsername , editTextTextOwnerNIC , editTextOwnerPhone , editTextStationREGNo , editTextTextLocation , editTextTextPassword2;
     Button buttonUpdate;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_station_owner_profile);
+
+        //Assign variables
         //Buttons
         buttonUpdate = (Button) findViewById(R.id.buttonReg);
         //Edit Texts
@@ -41,6 +45,7 @@ public class StationOwnerProfile extends AppCompatActivity {
 //        String ENDPOINTURL = "http://192.168.43.90:8088/api/FuelPass/api/FuelPass/GetStationOwners/";
 //        RequestQueue requestQueue = Volley.newRequestQueue(this);
 
+        //onclick for update profile details
         buttonUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
