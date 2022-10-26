@@ -25,7 +25,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class AddStation extends AppCompatActivity {
-
+    //Initialize variables
     Button buttonRegister;
     EditText name , province , location , remaingpetrol , remaingdiesel;
     String id = "63581220bc5baef989b97d1e";
@@ -35,6 +35,7 @@ public class AddStation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_station);
 
+        //Assign variables
         buttonRegister = (Button) findViewById(R.id.buttonReg);
 
         //Edit Texts
