@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class StationOwnerHome extends AppCompatActivity {
     //Initialize variables
-    private Button buttonAddMem, buttonViewMem, buttonFuelStatus, buttonFuelTime , Owner_Profile_button, Addstation_button;
+    private Button buttonAddMem, buttonViewMem, buttonFuelStatus, buttonFuelTime , Owner_Profile_button, Addstation_button, AddPetrolQ, AddDieselQ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,21 +17,16 @@ public class StationOwnerHome extends AppCompatActivity {
         setContentView(R.layout.activity_station_owner_home);
 
         //Assign variables
-        buttonAddMem = (Button) findViewById(R.id.buttonAddMem);
+//        buttonAddMem = (Button) findViewById(R.id.buttonAddMem);
 //        buttonViewMem = (Button) findViewById(R.id.buttonViewMem);
         buttonFuelStatus = (Button) findViewById(R.id.buttonFuelStatus);
         buttonFuelTime = (Button) findViewById(R.id.buttonFuelTime);
         Owner_Profile_button = (Button) findViewById(R.id.Owner_Profile_button);
         Addstation_button = (Button) findViewById(R.id.AddStation);
+        AddPetrolQ = (Button) findViewById(R.id.AddPetrolQ);
+        AddDieselQ = (Button) findViewById(R.id.AddDieselQ);
 
-        //Onclick method for add members
-        buttonAddMem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), VehicleOwnerRegister.class);
-                startActivityForResult(myIntent, 0);
-            }
-        });
+        //Onclick method
         Addstation_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,6 +58,24 @@ public class StationOwnerHome extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(view.getContext(), StationOwnerProfile.class);
+                startActivityForResult(myIntent, 0);
+            }
+        });
+
+        //Onclick method
+        AddPetrolQ.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(view.getContext(), CreatePetrolQueue.class);
+                startActivityForResult(myIntent, 0);
+            }
+        });
+
+        //Onclick method
+        AddDieselQ.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(view.getContext(), CreateDieselQueue.class);
                 startActivityForResult(myIntent, 0);
             }
         });
