@@ -40,6 +40,7 @@
         <entry key="..\:/EAD/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/EAD/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/EAD/app/src/main/res/layout/activity_register.xml" value="0.1" />
+        <entry key="..\:/EAD/app/src/main/res/layout/activity_station_item_preview.xml" value="0.25" />
         <entry key="..\:/EAD/app/src/main/res/layout/activity_station_owner_home.xml" value="0.2418478260869565" />
         <entry key="..\:/EAD/app/src/main/res/layout/activity_station_owner_profile.xml" value="0.2359375" />
         <entry key="..\:/EAD/app/src/main/res/layout/activity_station_owner_register.xml" value="0.2418478260869565" />
@@ -53,13 +54,15 @@
         <entry key="..\:/EAD/app/src/main/res/layout/activity_view_station.xml" value="0.178125" />
         <entry key="..\:/EAD/app/src/main/res/layout/activity_view_station_row.xml" value="0.178125" />
         <entry key="..\:/EAD/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/EAD/app/src/main/res/layout/spinner_item.xml" value="0.1109375" />
         <entry key="..\:/EAD/app/src/main/res/layout/spinner_worker_item.xml" value="0.12708333333333333" />
         <entry key="..\:/EAD/app/src/main/res/layout/spinner_worker_type.xml" value="0.12708333333333333" />
         <entry key="..\:/EAD/app/src/main/res/menu/main_menu.xml" value="0.264" />
+        <entry key="..\:/EAD/app/src/main/res/menu/menu.xml" value="0.25" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

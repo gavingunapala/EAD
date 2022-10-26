@@ -1,12 +1,17 @@
 package com.example.ead.Models;
 
-public class FuelStation {
+public class FuelStationModel {
 
     private String Id;
     private String StationName;
     private String Province;
     private String Location;
     private float RemaingPetrol;
+
+    public FuelStationModel(String stationName , String location) {
+        StationName = stationName;
+        Location = location;
+    }
 
     public String getId() {
         return Id;

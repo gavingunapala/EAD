@@ -13,19 +13,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 //import android.widget.Toast;
 //import com.squareup.*;
-import com.example.ead.Models.FuelStation;
+import com.example.ead.Models.FuelStationModel;
 
 import java.util.List;
 
-public class FuelStationAdapter extends ArrayAdapter<FuelStation> {
+public class FuelStationAdapter extends ArrayAdapter<FuelStationModel> {
 
     private Activity context;
-    List<FuelStation> fuelDetails;
+    List<FuelStationModel> fuelDetails;
 //    DatabaseReference Reference;
     Button favDelete, addToCart;
     String user;
 
-    public FuelStationAdapter(Activity context, List<FuelStation> fuelDetails) {
+    public FuelStationAdapter(Activity context, List<FuelStationModel> fuelDetails) {
         super(context, R.layout.activity_view_station_row, fuelDetails);
         this.context = context;
         this.fuelDetails = fuelDetails;

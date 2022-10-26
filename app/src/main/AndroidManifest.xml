@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EAD">
         <activity
+            android:name=".StationItemPreview"
+            android:exported="true" />
+        <activity
             android:name=".ViewStation"
             android:exported="false">
             <meta-data

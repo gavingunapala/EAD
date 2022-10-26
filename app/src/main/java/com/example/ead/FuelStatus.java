@@ -36,6 +36,7 @@ public class FuelStatus extends AppCompatActivity implements AdapterView.OnItemS
     Spinner DieselSpinner, PetrolSpinner;
     public static String petrolType, dieselType;
     // //Assign the id
+    String ptypespinner;
     String Stationid = "6358cd88ee232c8194e2f5c6";
 
     @Override
