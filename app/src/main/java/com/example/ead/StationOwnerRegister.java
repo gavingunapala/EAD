@@ -8,12 +8,14 @@ import android.widget.EditText;
 
 public class StationOwnerRegister extends AppCompatActivity {
 
+    //Initialize variables
     private Button ButtonReg;
     EditText editTextTextOwnerUsername , editTextTextOwnerNIC , editTextOwnerPhone , editTextStationREGNo , editTextTextLocation,editTextTextPassword2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        //Assign variables
         ButtonReg = (Button) findViewById(R.id.buttonReg);
         //editTexts
         editTextTextOwnerUsername=findViewById( R.id.editTextTextProvince);

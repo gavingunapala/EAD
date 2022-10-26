@@ -29,6 +29,7 @@ import java.util.List;
 
 public class VehicleOwnerRegister extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
+    //Initialize variables
     private Button buttonRegister;
     EditText name , FuelAmount , mobileNumber , vehicleNumber , password;
     //spinner - vehicle type & fuel type, user selection
@@ -41,6 +42,7 @@ public class VehicleOwnerRegister extends AppCompatActivity implements AdapterVi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vehicle_owner_register);
 
+        //Assign variables
         buttonRegister = (Button) findViewById(R.id.buttonReg);
 
         //Edit Texts

@@ -18,7 +18,7 @@ import java.util.Date;
 
 public class FuelArrivalTime extends AppCompatActivity {
 
-    //Initialize variable
+    //Initialize variables
     TextView textViewArriaval, textViewFinished;
     int t1Hour, t1Minute, t2Hour, t2Minute;
     private Button buttonUpdateTime;
@@ -33,6 +33,7 @@ public class FuelArrivalTime extends AppCompatActivity {
         textViewFinished = findViewById(R.id.textViewFinished);
 //        buttonUpdateTime = findViewById(R.id.buttonUpdateTime);
 
+        //onclick for the update time
         buttonUpdateTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,6 +42,7 @@ public class FuelArrivalTime extends AppCompatActivity {
             }
         });
 
+        //onclick for the time picker
         textViewArriaval.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -90,6 +92,7 @@ public class FuelArrivalTime extends AppCompatActivity {
             }
         });
 
+        //onclick for the time picker
         textViewFinished.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import com.example.ead.R;
 
 public class HomeFragment extends Fragment {
+    //create the home fragment for splash screen
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {

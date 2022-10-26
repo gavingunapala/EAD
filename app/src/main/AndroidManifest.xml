@@ -12,11 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EAD">
         <activity
+            android:name=".ViewStation"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".AddStation"
             android:exported="true" />
         <activity
             android:name=".UserSelection"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".common.SplashScreen"
             android:exported="true">
@@ -49,16 +56,16 @@
             android:exported="true" />
         <activity
             android:name=".VehicleOwnerRegister"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".VehicleOwnerProfile"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Login"
             android:exported="true" />
         <activity
             android:name=".common.MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>
