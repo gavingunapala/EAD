@@ -54,13 +54,13 @@ public class FuelStatus extends AppCompatActivity implements AdapterView.OnItemS
         // Spinner Drop down elements - User types
         List<String> pet = new ArrayList<String>();
         pet.add("Avalable");
-        pet.add("Not Avalable");
+        pet.add("NotAvalable");
 
 
         // Spinner Drop down elements - vehicle type
         List<String> die = new ArrayList<String>();
         die.add("Avalable");
-        die.add("Not Avalable");
+        die.add("NotAvalable");
 
         // Creating adapter for spinner
         ArrayAdapter<String> dataAdapterTypeForPetrol = new ArrayAdapter<String>(getApplicationContext(), R.layout.spinner_item, pet);
@@ -77,6 +77,7 @@ public class FuelStatus extends AppCompatActivity implements AdapterView.OnItemS
         DiesalSpinner.setAdapter(dataAdapterTypeForDiesal);
 
         String ptypespinner = PetrolSpinner.getSelectedItem().toString();
+        Log.e("Spinner checked", ptypespinner);
         //url
         String ENDPOINTURL = "http://192.168.43.90:8088/api/FuelPass/UpdatePetrolQStatus/"+ptypespinner;
         RequestQueue requestQueue = Volley.newRequestQueue(this);
@@ -84,18 +85,6 @@ public class FuelStatus extends AppCompatActivity implements AdapterView.OnItemS
         pUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-//                String ptypespinner = PetrolSpinner.getSelectedItem().toString();
-//
-//                JSONObject object = new JSONObject();
-//                try {
-//                    object.put("QueueStatus",ptypespinner);
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                }
-//                Log.e("User Register",object.toString());
-
-//                Toast.makeText(FuelStatus.this, "Registration Success "+ object +"", Toast.LENGTH_SHORT).show();
                 JsonObjectRequest objectRequest = new JsonObjectRequest(
                         Request.Method.PATCH,
                         ENDPOINTURL,
