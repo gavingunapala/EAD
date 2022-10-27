@@ -4,13 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.example.ead.Models.FuelStationModel;
 
 public class StationItemPreview extends AppCompatActivity {
     TextView textView;
-    FuelStationModel sModel;
+    String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +21,9 @@ public class StationItemPreview extends AppCompatActivity {
         textView = findViewById(R.id.textView);
         Intent intent = getIntent();
         if(intent.getExtras() != null){
-            sModel = (FuelStationModel) intent.getSerializableExtra("items");
-            textView.setText(sModel.getStationName());
+            id = (String) intent.getSerializableExtra("items");
+            Log.e("ViewStation","msg : "+id);
+            textView.setText(id);
         }
     }
 }

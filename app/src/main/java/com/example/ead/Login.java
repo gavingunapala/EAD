@@ -13,16 +13,22 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.ead.common.MainActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Login extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
     //Initialize variables
@@ -57,6 +63,7 @@ public class Login extends AppCompatActivity implements AdapterView.OnItemSelect
 
                 if (!TextUtils.isEmpty(userName.getText().toString().trim()) && !TextUtils.isEmpty(password.getText().toString().trim())) {
                     //create new Json object
+
                     JSONObject object = new JSONObject();
                     try {
                         object.put("userName",uname);
@@ -73,7 +80,7 @@ public class Login extends AppCompatActivity implements AdapterView.OnItemSelect
                             new Response.Listener<JSONObject>() {
                                 @Override
                                 public void onResponse(JSONObject response) {
-                                    Log.e("Rest Response", String.valueOf(response));
+                                    Log.e("Rest Response", response.toString());
                                 }
                             },
                             new Response.ErrorListener() {
@@ -84,7 +91,34 @@ public class Login extends AppCompatActivity implements AdapterView.OnItemSelect
                             }
                     );
                     requestQueue.add(objectRequest);
-                    Intent intent = new Intent(Login.this, StationOwnerHome.class);
+//                    String a = object.toString();
+//                    StringRequest sr = new StringRequest(
+//                            Request.Method.POST,
+//                            ENDPOINTURL,
+//                            new Response.Listener<String>() {
+//                                @Override
+//                                public void onResponse(String response) {
+//                                    Log.e("Rest Response", response);
+//                                }
+//                            },
+//                            new Response.ErrorListener() {
+//                                @Override
+//                                public void onErrorResponse(VolleyError error) {
+//                                    Log.e("Rest err", error.toString());
+//                                }
+//                            })
+//                    {
+//                        @Override
+//                        protected Map<String,String> getParams(){
+//                            Map<String,String> params = new HashMap<String, String>();
+//                            params.put("userName",object.toString());
+//                            Log.e("Rest params", params.toString());
+//                            return null;
+//                        }
+//                    };
+//                    requestQueue.add(sr);
+
+                    Intent intent = new Intent(Login.this, MainActivity.class);
                     startActivity(intent);
                 }
                 else

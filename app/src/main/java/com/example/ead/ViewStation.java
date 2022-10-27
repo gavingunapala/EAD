@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
@@ -78,7 +79,8 @@ public class ViewStation extends AppCompatActivity {
                                     for(int i = 0;i < response.length();i++){
                                         String stationName = response.getJSONObject(i).getString("stationName");
                                         String stationlocation = response.getJSONObject(i).getString("location");
-                                        FuelStationModel itemsModel = new FuelStationModel(stationName,stationlocation);
+                                        String sid = response.getJSONObject(i).getString("id");
+                                        FuelStationModel itemsModel = new FuelStationModel(stationName,stationlocation ,sid);
                                         stationsModelList.add(itemsModel);
                                     }
                                     customAdapter = new CustomAdapter(stationsModelList,ViewStation.this);
@@ -120,36 +122,36 @@ public class ViewStation extends AppCompatActivity {
                 });
 
     }
-    //rest
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        getMenuInflater().inflate(R.menu.menu,menu);
-        MenuItem menuItem = menu.findItem(R.id.searchView);
-        SearchView searchView = (SearchView) menuItem.getActionView();
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                Log.e("Main"," data search"+newText);
-                customAdapter.getFilter().filter(newText);
-                return true;
-            }
-        });
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
-        if(id == R.id.searchView){
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+//    //rest
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//
+//        getMenuInflater().inflate(R.menu.menu,menu);
+//        MenuItem menuItem = menu.findItem(R.id.searchView);
+//        SearchView searchView = (SearchView) menuItem.getActionView();
+//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//            @Override
+//            public boolean onQueryTextSubmit(String query) {
+//                return false;
+//            }
+//            @Override
+//            public boolean onQueryTextChange(String newText) {
+//                Log.e("Main"," data search"+newText);
+//                customAdapter.getFilter().filter(newText);
+//                return true;
+//            }
+//        });
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//        int id = item.getItemId();
+//        if(id == R.id.searchView){
+//            return true;
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 
     //Adapter
     public class CustomAdapter extends BaseAdapter implements Filterable {
@@ -186,17 +188,18 @@ public class ViewStation extends AppCompatActivity {
 
             TextView snames = view.findViewById(R.id.stationName);
             TextView sLocation = view.findViewById(R.id.stationLocation);
+            Button btn = view.findViewById(R.id.btn);
 
             snames.setText(fuelModelListFiltered.get(position).getStationName());
             sLocation.setText(fuelModelListFiltered.get(position).getLocation());
-
-            view.setOnClickListener(new View.OnClickListener() {
+            String id = fuelModelListFiltered.get(position).getId();
+            Log.e("id",id);
+            btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Log.e("main activity","item clicked");
-                    startActivity(new Intent(ViewStation.this,StationItemPreview.class)
-                            .putExtra("items", (CharSequence) fuelModelListFiltered.get(position))
-                            );
+                    Log.e("ViewStation","item clicked");
+                    startActivity(new Intent(ViewStation.this,StationItemPreview.class).putExtra("items",id));
+
                 }
             });
 
