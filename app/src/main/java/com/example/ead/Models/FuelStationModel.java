@@ -8,9 +8,10 @@ public class FuelStationModel {
     private String Location;
     private float RemaingPetrol;
 
-    public FuelStationModel(String stationName , String location) {
+    public FuelStationModel(String stationName , String location ,String id) {
         StationName = stationName;
         Location = location;
+        Id = id;
     }
 
     public String getId() {
