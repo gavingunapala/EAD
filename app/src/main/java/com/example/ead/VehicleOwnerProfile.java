@@ -19,6 +19,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.ead.common.MainActivity;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
@@ -183,7 +184,7 @@ public class VehicleOwnerProfile extends AppCompatActivity implements AdapterVie
 //                        vehiclenumber + pass +"", Toast.LENGTH_SHORT).show();
 
                 Log.e("update data", username + fuelamount + mobilenumber );
-                Intent myIntent = new Intent(view.getContext(), Login.class);
+                Intent myIntent = new Intent(view.getContext(), MainActivity.class);
                 startActivityForResult(myIntent, 0);
             }
         });

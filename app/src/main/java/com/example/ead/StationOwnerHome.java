@@ -19,7 +19,7 @@ public class StationOwnerHome extends AppCompatActivity {
         //Assign variables
 //        buttonAddMem = (Button) findViewById(R.id.buttonAddMem);
 //        buttonViewMem = (Button) findViewById(R.id.buttonViewMem);
-        buttonFuelStatus = (Button) findViewById(R.id.buttonFuelStatus);
+        buttonFuelStatus = (Button) findViewById(R.id.updateFuelStation);
         buttonFuelTime = (Button) findViewById(R.id.buttonFuelTime);
         Owner_Profile_button = (Button) findViewById(R.id.Owner_Profile_button);
         Addstation_button = (Button) findViewById(R.id.AddStation);
@@ -39,7 +39,7 @@ public class StationOwnerHome extends AppCompatActivity {
         buttonFuelStatus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), FuelStatus.class);
+                Intent myIntent = new Intent(view.getContext(), UpdateFuelStation.class);
                 startActivityForResult(myIntent, 0);
             }
         });
