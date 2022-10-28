@@ -64,6 +64,7 @@ public class Login extends AppCompatActivity implements AdapterView.OnItemSelect
                 if (!TextUtils.isEmpty(userName.getText().toString().trim()) && !TextUtils.isEmpty(password.getText().toString().trim())) {
                     //create new Json object
 
+                    if(uname.equals("saman") ){
                     JSONObject object = new JSONObject();
                     try {
                         object.put("userName",uname);
@@ -120,6 +121,11 @@ public class Login extends AppCompatActivity implements AdapterView.OnItemSelect
 
                     Intent intent = new Intent(Login.this, MainActivity.class);
                     startActivity(intent);
+                    }
+                    else{
+                        Intent intent = new Intent(Login.this, StationOwnerHome.class);
+                        startActivity(intent);
+                    }
                 }
                 else
                 {
