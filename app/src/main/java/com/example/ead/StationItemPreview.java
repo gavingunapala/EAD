@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.ead.Models.FuelStationModel;
@@ -12,6 +14,8 @@ import com.example.ead.Models.FuelStationModel;
 public class StationItemPreview extends AppCompatActivity {
     TextView textView;
     String id;
+    //Initialize variables
+    private Button Owner_Profile_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,5 +29,14 @@ public class StationItemPreview extends AppCompatActivity {
             Log.e("ViewStation","msg : "+id);
             textView.setText(id);
         }
+
+        //Onclick method
+        Owner_Profile_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(view.getContext(), ViewStation.class);
+                startActivityForResult(myIntent, 0);
+            }
+        });
     }
 }
