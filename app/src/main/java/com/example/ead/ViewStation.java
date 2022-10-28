@@ -33,6 +33,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.ead.Models.FuelStationModel;
+import com.example.ead.common.MainActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -52,11 +53,20 @@ public class ViewStation extends AppCompatActivity {
     List<FuelStationModel> stationsModelList = new ArrayList<>();
     ListView listView;
     CustomAdapter customAdapter;
-
+    Button leave;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_station);
+
+        leave = (Button) findViewById(R.id.button);
+        leave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ViewStation.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         //url and get data from database
         String ENDPOINTURL = "http://192.168.43.90:8088/api/FuelPass/GetStations";
