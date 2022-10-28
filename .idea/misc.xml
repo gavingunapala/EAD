@@ -45,6 +45,7 @@
         <entry key="..\:/EAD/app/src/main/res/layout/activity_station_owner_profile.xml" value="0.2359375" />
         <entry key="..\:/EAD/app/src/main/res/layout/activity_station_owner_register.xml" value="0.2418478260869565" />
         <entry key="..\:/EAD/app/src/main/res/layout/activity_station_users_register.xml" value="0.25" />
+        <entry key="..\:/EAD/app/src/main/res/layout/activity_update_fuel_station.xml" value="0.25" />
         <entry key="..\:/EAD/app/src/main/res/layout/activity_user_profile.xml" value="0.25" />
         <entry key="..\:/EAD/app/src/main/res/layout/activity_user_selection.xml" value="0.25" />
         <entry key="..\:/EAD/app/src/main/res/layout/activity_vehicle_owner_profile.xml" value="0.264" />
@@ -62,7 +63,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
